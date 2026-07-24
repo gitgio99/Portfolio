@@ -21,12 +21,19 @@
             <nav class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link active" data-i18n="nav_home">Home</a>
                 <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+                <a href="#competencies" class="nav-link" data-i18n="nav_competencies">Competencies</a>
                 <a href="#experience" class="nav-link" data-i18n="nav_experience">Experience</a>
                 <a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a>
                 <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
             </nav>
 
             <div class="navbar-actions">
+                <!-- PDF Resume Button -->
+                <a href="#" class="btn-resume" id="resume-btn" download>
+                    <i data-lucide="download"></i>
+                    <span data-i18n="nav_resume">이력서 다운로드</span>
+                </a>
+
                 <!-- Language Toggle Button -->
                 <button class="lang-toggle-btn" id="lang-toggle" aria-label="언어 전환">
                     <span class="lang-text">EN</span>
@@ -138,6 +145,118 @@
         </div>
     </section>
 
+    <!-- Core Competencies Section -->
+    <section id="competencies" class="competencies">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-i18n="comp_tag">Core Skillsets</span>
+                <h2 class="section-title" data-i18n="comp_title">핵심 기술 역량</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="competencies-grid">
+                <!-- Competency Card 1 -->
+                <div class="competency-card">
+                    <div class="competency-header">
+                        <div class="comp-icon bg-gradient-1">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <h3 data-i18n="comp1_title">시스템 프로그래밍 (System Programming)</h3>
+                    </div>
+                    <div class="comp-body">
+                        <div class="comp-skill">
+                            <div class="comp-skill-info">
+                                <span>C / C++</span>
+                                <span class="comp-percent">90%</span>
+                            </div>
+                            <div class="comp-progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="comp-skill">
+                            <div class="comp-skill-info">
+                                <span>POSIX Threads & Multithreading</span>
+                                <span class="comp-percent">85%</span>
+                            </div>
+                            <div class="comp-progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="comp-skill">
+                            <div class="comp-skill-info">
+                                <span>Linux OS Internals & Systems Calls</span>
+                                <span class="comp-percent">80%</span>
+                            </div>
+                            <div class="comp-progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Competency Card 2 -->
+                <div class="competency-card">
+                    <div class="competency-header">
+                        <div class="comp-icon bg-gradient-2">
+                            <i data-lucide="network"></i>
+                        </div>
+                        <h3 data-i18n="comp2_title">네트워크 및 시뮬레이션 (Network & Simulation)</h3>
+                    </div>
+                    <div class="comp-body">
+                        <div class="comp-skill">
+                            <div class="comp-skill-info">
+                                <span>NS3 (Network Simulator 3)</span>
+                                <span class="comp-percent">85%</span>
+                            </div>
+                            <div class="comp-progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="comp-skill">
+                            <div class="comp-skill-info">
+                                <span>TCP/IP & Routing Protocols</span>
+                                <span class="comp-percent">85%</span>
+                            </div>
+                            <div class="comp-progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="comp-skill">
+                            <div class="comp-skill-info">
+                                <span>Network Packet Socket Capture (PCAP)</span>
+                                <span class="comp-percent">80%</span>
+                            </div>
+                            <div class="comp-progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Competency Card 3 -->
+                <div class="competency-card">
+                    <div class="competency-header">
+                        <div class="comp-icon bg-gradient-3">
+                            <i data-lucide="file-json"></i>
+                        </div>
+                        <h3 data-i18n="comp3_title">분석 및 스크립팅 (Analysis & Scripting)</h3>
+                    </div>
+                    <div class="comp-body">
+                        <div class="comp-skill">
+                            <div class="comp-skill-info">
+                                <span>Python</span>
+                                <span class="comp-percent">90%</span>
+                            </div>
+                            <div class="comp-progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="comp-skill">
+                            <div class="comp-skill-info">
+                                <span>Data Visualization (Matplotlib, Pandas)</span>
+                                <span class="comp-percent">80%</span>
+                            </div>
+                            <div class="comp-progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                        </div>
+                        <div class="comp-skill">
+                            <div class="comp-skill-info">
+                                <span>Automation Scripting & Shell programming</span>
+                                <span class="comp-percent">85%</span>
+                            </div>
+                            <div class="comp-progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
@@ -205,21 +324,241 @@
                 <div class="section-line"></div>
             </div>
 
-            <!-- Project Filter Buttons -->
-            <div class="project-filter">
-                <button class="filter-btn active" data-filter="all" data-i18n="proj_filter_all">전체</button>
-                <button class="filter-btn" data-filter="starred" data-i18n="proj_filter_starred">Starred</button>
-                <button class="filter-btn" data-filter="recent" data-i18n="proj_filter_recent">Recent</button>
-            </div>
+            <div class="projects-deep-list">
+                <!-- Deep-dive Project 1 -->
+                <div class="project-deep-card">
+                    <div class="project-deep-header">
+                        <div class="project-deep-header-left">
+                            <h3 data-i18n="p1_title">NS-3 기반 무선 네트워크 라우팅 프로토콜 시뮬레이터</h3>
+                            <p class="project-deep-sub" data-i18n="p1_summary">대규모 무선 메시 네트워크 환경에서 멀티홉 라우팅 프로토콜의 패킷 전송 효율을 검증하기 위한 시뮬레이터 개발</p>
+                            <span class="project-deep-time" data-i18n="p1_duration_role">2024.10 - 2025.02 (연구원 / 시뮬레이션 개발, 기여도 100%)</span>
+                        </div>
+                        <div class="project-deep-header-right">
+                            <a href="https://github.com/gitgio99" target="_blank" class="btn btn-outline btn-sm">
+                                <i data-lucide="github"></i> Repository
+                            </a>
+                        </div>
+                    </div>
 
-            <!-- Loading Spinner / Fallback message -->
-            <div id="projects-loading" class="projects-loading-container">
-                <div class="spinner"></div>
-                <p data-i18n="projects_loading_text">GitHub에서 프로젝트를 불러오는 중입니다...</p>
-            </div>
+                    <div class="project-deep-body">
+                        <div class="project-deep-diagram-container">
+                            <div class="diagram-overlay">
+                                <i data-lucide="zoom-in"></i>
+                                <span data-i18n="diag_zoom">클릭하여 다이어그램 확대</span>
+                            </div>
+                            <!-- Inline SVG for NS-3 Simulation Architecture Flowchart -->
+                            <svg class="flowchart-svg" viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+                                    </linearGradient>
+                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#0d9488;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+                                    </linearGradient>
+                                    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+                                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+                                    </filter>
+                                </defs>
+                                <rect width="500" height="240" fill="#f8fafc" rx="12" />
+                                
+                                <!-- Connection lines -->
+                                <path d="M120,70 L170,70" stroke="#cbd5e1" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="4,4" />
+                                <path d="M120,170 L170,170" stroke="#cbd5e1" stroke-width="2.5" />
+                                <path d="M270,70 L340,70" stroke="#cbd5e1" stroke-width="2.5" />
+                                <path d="M270,170 L340,170" stroke="#cbd5e1" stroke-width="2.5" />
+                                <path d="M220,105 L220,135" stroke="#cbd5e1" stroke-width="2.5" />
+                                <path d="M400,105 L400,135" stroke="#cbd5e1" stroke-width="2.5" />
+                                
+                                <!-- Nodes -->
+                                <rect x="20" y="45" width="100" height="50" rx="8" fill="url(#grad1)" filter="url(#shadow)" />
+                                <text x="70" y="75" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="11" text-anchor="middle">NS3 Core Engine</text>
 
-            <div class="project-grid" id="project-grid">
-                <!-- Project Cards will be dynamically loaded here by main.js from GitHub API -->
+                                <rect x="20" y="145" width="100" height="50" rx="8" fill="url(#grad1)" filter="url(#shadow)" />
+                                <text x="70" y="175" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="11" text-anchor="middle">Network Node Topo</text>
+
+                                <rect x="170" y="45" width="100" height="50" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
+                                <text x="220" y="75" fill="#334155" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">Dynamic E-AODV</text>
+
+                                <rect x="170" y="135" width="100" height="50" rx="8" fill="url(#grad2)" filter="url(#shadow)" />
+                                <text x="220" y="165" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">SINR Channel Eval</text>
+
+                                <rect x="340" y="45" width="120" height="50" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
+                                <text x="400" y="75" fill="#334155" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">Trace Packet Buff</text>
+
+                                <rect x="340" y="135" width="120" height="50" rx="8" fill="url(#grad2)" filter="url(#shadow)" />
+                                <text x="400" y="165" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">PyPlot Metric Vis</text>
+                            </svg>
+                        </div>
+
+                        <div class="project-deep-details">
+                            <div class="project-deep-tags">
+                                <span class="tag">C / C++</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">NS3 Engine</span>
+                                <span class="tag">AODV</span>
+                                <span class="tag">Wireless Routing</span>
+                                <span class="tag">Matplotlib</span>
+                            </div>
+
+                            <!-- Problem -> Solution -> Result Blocks -->
+                            <div class="psr-container">
+                                <div class="psr-block psr-problem">
+                                    <div class="psr-title-row">
+                                        <i data-lucide="alert-triangle" class="text-secondary"></i>
+                                        <h4 data-i18n="p1_prob_title">문제 상황 (Problem)</h4>
+                                    </div>
+                                    <p data-i18n="p1_prob_desc">노드 밀도 증가 및 이동성에 따른 무선 채널 간섭으로 패킷 손실률(Packet Loss Rate)이 급격히 증가하고 전송 신뢰도가 떨어지는 성능 저하 병목 현상이 발생했습니다.</p>
+                                </div>
+
+                                <div class="psr-block psr-solution">
+                                    <div class="psr-title-row">
+                                        <i data-lucide="check-circle" class="text-primary"></i>
+                                        <h4 data-i18n="p1_sol_title">해결 방안 (Solution)</h4>
+                                    </div>
+                                    <p data-i18n="p1_sol_desc">노드 잔여 에너지량 및 실시간 SINR 채널 품질 가중치를 계산하여 혼잡도가 낮고 전송 능력이 보장된 경로로 다중 경로 우회(Detour)하는 신규 알고리즘(E-AODV)을 직접 C++ 설계하여 NS-3에 탑재했습니다.</p>
+                                </div>
+
+                                <div class="psr-block psr-result">
+                                    <div class="psr-title-row">
+                                        <i data-lucide="trending-up" class="text-primary"></i>
+                                        <h4 data-i18n="p1_res_title">수행 결과 (Result)</h4>
+                                    </div>
+                                    <p data-i18n="p1_res_desc">네트워크 데이터 처리량(Throughput) 24% 향상, 패킷 전송 성공률(PDR) 15% 개선 및 전력 불균형 해소를 통한 개별 노드 전력 소모 가독 최적화로 전체 토폴로지 수명을 1.8배 개선했습니다.</p>
+                                </div>
+                            </div>
+
+                            <!-- Troubleshooting Callout -->
+                            <div class="trouble-box">
+                                <div class="trouble-header">
+                                    <i data-lucide="shield-alert"></i>
+                                    <span data-i18n="p1_trouble_title">기술적 난관 및 해결 과정 (Troubleshooting)</span>
+                                </div>
+                                <p class="trouble-desc" data-i18n="p1_trouble_desc">
+                                    <strong>메모리 릭 및 크래시:</strong> 100개 이상의 노드가 참여하는 장시간 대규모 시뮬레이션 시 패킷 포인터 해제 실패로 RAM 누수가 심화되며 약 12시간 실행 후 시뮬레이터가 갑자기 종료되는 현상 발생. Linux 환경에서 <strong>Valgrind(Memcheck)</strong> 프로파일링을 실행하여 C++ 스마트 포인터가 우회된 원형 버퍼 내 누수 트리거 지점을 정밀 포착. `std::shared_ptr` 스마트 포인터 도입 및 의존성 주입 시점 정리, 누수 버퍼의 명시적 `clear()` 메소드 추가 작업을 통해 120시간 연속 시뮬레이션에서도 메모리 점유율을 일정하게 유지하며 크래시 병목을 원천 해결함.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deep-dive Project 2 -->
+                <div class="project-deep-card">
+                    <div class="project-deep-header">
+                        <div class="project-deep-header-left">
+                            <h3 data-i18n="p2_title">고성능 리눅스 TCP/IP 원시 패킷 캡처 및 아키텍처 분석 시스템</h3>
+                            <p class="project-deep-sub" data-i18n="p2_summary">리눅스 네트워크 카드 커널 수준에서 들어오는 원시 소켓(Raw Socket) 데이터를 손실 없이 수집하고 실시간 패킷 헤더 정밀 파싱 처리를 담당하는 분산형 분석기 개발</p>
+                            <span class="project-deep-time" data-i18n="p2_duration_role">2024.04 - 2024.08 (시스템 개발 / 메인 아키텍트, 기여도 100%)</span>
+                        </div>
+                        <div class="project-deep-header-right">
+                            <a href="https://github.com/gitgio99" target="_blank" class="btn btn-outline btn-sm">
+                                <i data-lucide="github"></i> Repository
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-deep-body">
+                        <div class="project-deep-diagram-container">
+                            <div class="diagram-overlay">
+                                <i data-lucide="zoom-in"></i>
+                                <span data-i18n="diag_zoom">클릭하여 다이어그램 확대</span>
+                            </div>
+                            <!-- Inline SVG for Network Capturer Architecture -->
+                            <svg class="flowchart-svg" viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#0d9488;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                    </linearGradient>
+                                    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#ea580c;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#eab308;stop-opacity:1" />
+                                    </linearGradient>
+                                    <filter id="shadow2" x="-10%" y="-10%" width="120%" height="120%">
+                                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+                                    </filter>
+                                </defs>
+                                <rect width="500" height="240" fill="#f8fafc" rx="12" />
+                                
+                                <!-- Connection lines -->
+                                <path d="M120,70 L170,70" stroke="#cbd5e1" stroke-width="2.5" />
+                                <path d="M270,70 L340,70" stroke="#cbd5e1" stroke-width="2.5" />
+                                <path d="M400,105 L400,135" stroke="#cbd5e1" stroke-width="2.5" />
+                                <path d="M340,160 L270,160" stroke="#cbd5e1" stroke-width="2.5" />
+                                <path d="M170,160 L120,160" stroke="#cbd5e1" stroke-width="2.5" />
+                                
+                                <!-- Nodes -->
+                                <rect x="20" y="45" width="100" height="50" rx="8" fill="url(#grad3)" filter="url(#shadow2)" />
+                                <text x="70" y="75" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="11" text-anchor="middle">Network Packet</text>
+
+                                <rect x="170" y="45" width="100" height="50" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow2)" />
+                                <text x="220" y="75" fill="#334155" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">Linux Raw Socket</text>
+
+                                <rect x="340" y="45" width="120" height="50" rx="8" fill="url(#grad3)" filter="url(#shadow2)" />
+                                <text x="400" y="75" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">Lock-Free RingBuff</text>
+
+                                <rect x="340" y="135" width="120" height="50" rx="8" fill="url(#grad4)" filter="url(#shadow2)" />
+                                <text x="400" y="165" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">Multithread Parser</text>
+
+                                <rect x="170" y="135" width="100" height="50" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow2)" />
+                                <text x="220" y="165" fill="#334155" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">Packet Analytics</text>
+
+                                <rect x="20" y="135" width="100" height="50" rx="8" fill="url(#grad4)" filter="url(#shadow2)" />
+                                <text x="70" y="165" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">PCAP Wireshark</text>
+                            </svg>
+                        </div>
+
+                        <div class="project-deep-details">
+                            <div class="project-deep-tags">
+                                <span class="tag">C / C++</span>
+                                <span class="tag">Linux socket API</span>
+                                <span class="tag">POSIX threads</span>
+                                <span class="tag">Lock-free Circular Buffer</span>
+                                <span class="tag">TCP/IP Parse</span>
+                                <span class="tag">PCAP format</span>
+                            </div>
+
+                            <!-- Problem -> Solution -> Result Blocks -->
+                            <div class="psr-container">
+                                <div class="psr-block psr-problem">
+                                    <div class="psr-title-row">
+                                        <i data-lucide="alert-triangle" class="text-secondary"></i>
+                                        <h4 data-i18n="p2_prob_title">문제 상황 (Problem)</h4>
+                                    </div>
+                                    <p data-i18n="p2_prob_desc">기가비트 이더넷 급 단일 버퍼 수신 환경에서 패킷 유입량이 초당 10만 개(100k pps) 수준으로 급증하자 파싱 처리 속도 지연으로 OS 소켓 링버퍼 오버플로우 및 패킷 유실 발생.</p>
+                                </div>
+
+                                <div class="psr-block psr-solution">
+                                    <div class="psr-title-row">
+                                        <i data-lucide="check-circle" class="text-primary"></i>
+                                        <h4 data-i18n="p2_sol_title">해결 방안 (Solution)</h4>
+                                    </div>
+                                    <p data-i18n="p2_sol_desc">패킷 수신(I/O 스레드)과 패킷 파싱(워커 스레드)을 완전히 분리하는 고속 무잠금 원형 큐(Lock-free Circular Queue) 동기화 아키텍처 및 POSIX 스레드 풀(Thread Pool) 최적화 도입.</p>
+                                </div>
+
+                                <div class="psr-block psr-result">
+                                    <div class="psr-title-row">
+                                        <i data-lucide="trending-up" class="text-primary"></i>
+                                        <h4 data-i18n="p2_res_title">수행 결과 (Result)</h4>
+                                    </div>
+                                    <p data-i18n="p2_res_desc">극한의 트래픽 환경에서도 무손실 실시간 패킷 수집률 100% (유실률 0.00%) 달성, 기가비트 환경 대비 CPU 메모리 자원 소모율 18% 절감 및 실시간 PCAP 규격 연동 성공.</p>
+                                </div>
+                            </div>
+
+                            <!-- Troubleshooting Callout -->
+                            <div class="trouble-box">
+                                <div class="trouble-header">
+                                    <i data-lucide="shield-alert"></i>
+                                    <span data-i18n="p2_trouble_title">기술적 난관 및 해결 과정 (Troubleshooting)</span>
+                                </div>
+                                <p class="trouble-desc" data-i18n="p2_trouble_desc">
+                                    <strong>스레드 동기화 락 경합 병목:</strong> 멀티 스레드가 큐의 쓰기/읽기 인덱스 포인터에 동시다발적으로 쓰기를 시도하면서 뮤텍스 락(Mutex Lock) 점유 대기 시간이 누적되어 속도가 크게 떨어지는 병목 현상 발생. C++11의 `std::atomic` 라이브러리를 사용해 <strong>CAS (Compare-And-Swap)</strong> 연산 기반의 무잠금(Lock-free) 프로듀서-컨슈머 링버퍼 알고리즘으로 전면 리팩토링 진행. 결과적으로 임계 구역 락 대기 오버헤드를 완전히 제거함으로써 단일 코어 패킷 유입 한계를 기존 대비 420% 이상 끌어올리는 극적인 하드웨어 성능 개선 달성.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -310,6 +649,15 @@
             </div>
         </div>
     </footer>
+
+    <!-- Fullscreen Diagram Zoom Modal -->
+    <div id="diagram-modal" class="modal">
+        <button class="modal-close" id="modal-close" aria-label="닫기">&times;</button>
+        <div class="modal-content" id="modal-content">
+            <!-- Dynamically cloned SVG diagram goes here -->
+        </div>
+        <div class="modal-caption" data-i18n="modal_caption">클릭하면 원래 크기로 축소됩니다.</div>
+    </div>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scroll-to-top-btn" aria-label="맨 위로 이동">

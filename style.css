@@ -21,6 +21,16 @@
     --border-color: #e2e8f0;        /* Slate 200 */
     --input-focus: #a5b4fc;         /* Indigo 300 */
 
+    /* Troubleshooting custom palettes */
+    --trouble-border: #f59e0b;       /* Amber 500 */
+    --trouble-bg: #fffbeb;           /* Amber 50 */
+    --problem-bg: #fff1f2;           /* Rose 50 */
+    --problem-border: #fda4af;       /* Rose 300 */
+    --solution-bg: #f0fdf4;          /* Green 50 */
+    --solution-border: #86efac;      /* Green 300 */
+    --result-bg: #f0f9ff;            /* Sky 50 */
+    --result-border: #7dd3fc;            /* Sky 300 */
+
     /* Gradients for project placeholders */
     --gradient-1: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
     --gradient-2: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
@@ -120,14 +130,19 @@ section {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.95rem;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
     font-weight: 600;
     border-radius: var(--border-radius-sm);
     transition: var(--transition-fast);
     cursor: pointer;
     text-decoration: none;
     border: 2px solid transparent;
+}
+
+.btn-sm {
+    padding: 0.45rem 1rem;
+    font-size: 0.85rem;
 }
 
 .btn-primary {
@@ -158,8 +173,8 @@ section {
 }
 
 .btn svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
 }
 
 /* ==========================================================================
@@ -205,11 +220,11 @@ section {
 
 .nav-menu {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .nav-link {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-secondary);
     text-decoration: none;
@@ -255,7 +270,34 @@ section {
 .navbar-actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
+}
+
+/* PDF Resume Download Button */
+.btn-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-resume:hover {
+    background-color: var(--secondary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-resume svg {
+    width: 15px;
+    height: 15px;
 }
 
 .lang-toggle-btn {
@@ -517,10 +559,107 @@ section {
 }
 
 /* ==========================================================================
-   6. Experience Section
+   6. Core Competencies Section (New HR/Visual Segment)
+   ========================================================================== */
+.competencies {
+    background-color: var(--bg-secondary);
+}
+
+.competencies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.competency-card {
+    background-color: #ffffff;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    padding: 2rem;
+    transition: var(--transition-normal);
+}
+
+.competency-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+}
+
+.competency-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.comp-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--border-radius-md);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.comp-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.competency-header h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.comp-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.comp-skill {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.comp-skill-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.comp-percent {
+    color: var(--primary-color);
+}
+
+.comp-progress-bar {
+    width: 100%;
+    height: 6px;
+    background-color: var(--bg-tertiary);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comp-progress-bar .progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    transition: width 1s ease-out;
+}
+
+/* ==========================================================================
+   7. Experience Section
    ========================================================================== */
 .experience {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
 }
 
 .timeline {
@@ -578,7 +717,7 @@ section {
 }
 
 .timeline-content {
-    background-color: #ffffff;
+    background-color: var(--bg-secondary);
     padding: 1.5rem;
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-sm);
@@ -632,240 +771,299 @@ section {
 }
 
 /* ==========================================================================
-   7. Projects Section
+   8. Projects Section (Curated Deep-Dive Showcase Layout)
    ========================================================================== */
-.project-filter {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 40px;
+.projects {
+    background-color: var(--bg-secondary);
 }
 
-.filter-btn {
-    background: none;
+.projects-deep-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.project-deep-card {
+    background-color: #ffffff;
+    border-radius: var(--border-radius-lg);
     border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    padding: 2.5rem;
+    transition: var(--transition-normal);
+}
+
+.project-deep-card:hover {
+    box-shadow: var(--shadow-xl);
+}
+
+.project-deep-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.project-deep-header-left h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+}
+
+.project-deep-sub {
+    font-size: 1rem;
     color: var(--text-secondary);
-    font-family: inherit;
-    font-size: 0.9rem;
-    font-weight: 600;
-    padding: 8px 18px;
+    margin-bottom: 8px;
+}
+
+.project-deep-time {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    background-color: var(--primary-light);
+    padding: 4px 12px;
     border-radius: 50px;
+}
+
+.project-deep-body {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Diagram Container Styles */
+.project-deep-diagram-container {
+    position: relative;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    cursor: zoom-in;
+    background-color: #f8fafc;
+}
+
+.project-deep-diagram-container:hover .diagram-overlay {
+    opacity: 1;
+}
+
+.project-deep-diagram-container:hover .flowchart-svg {
+    transform: scale(1.02);
+}
+
+.flowchart-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transition-normal);
+}
+
+.diagram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: var(--transition-fast);
+    z-index: 5;
+}
+
+.diagram-overlay svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Details Stack inside Project Cards */
+.project-deep-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.project-deep-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* PSR (Problem, Solution, Result) Structure */
+.psr-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.psr-block {
+    padding: 1.25rem;
+    border-radius: var(--border-radius-md);
+    border-left: 4px solid transparent;
+}
+
+.psr-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.psr-title-row svg {
+    width: 18px;
+    height: 18px;
+}
+
+.psr-title-row h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.psr-block p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.psr-problem {
+    background-color: var(--problem-bg);
+    border-left-color: var(--problem-border);
+}
+
+.psr-solution {
+    background-color: var(--solution-bg);
+    border-left-color: var(--solution-border);
+}
+
+.psr-result {
+    background-color: var(--result-bg);
+    border-left-color: var(--result-border);
+}
+
+/* Troubleshooting block */
+.trouble-box {
+    background-color: var(--trouble-bg);
+    border: 1px solid #fde68a;
+    border-left: 5px solid var(--trouble-border);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem;
+}
+
+.trouble-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #d97706; /* Amber 600 */
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.trouble-header svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.trouble-desc {
+    font-size: 0.925rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   9. Diagram Fullscreen Zoom Modal
+   ========================================================================== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.95);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 75vh;
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: auto;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-content svg {
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 3rem;
     cursor: pointer;
     transition: var(--transition-fast);
 }
 
-.filter-btn:hover {
-    border-color: var(--text-muted);
-    color: var(--text-primary);
-}
-
-.filter-btn.active {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-md);
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-/* Projects loading container & spinner */
-.projects-loading-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.25rem;
-    padding: 4rem 0;
-    width: 100%;
-    grid-column: 1 / -1;
-}
-
-.projects-loading-container.hidden {
-    display: none;
-}
-
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 4px solid var(--border-color);
-    border-top-color: var(--primary-color);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.animate-spin {
-    animation: spin 1s linear infinite;
-}
-
-.project-meta-details {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-}
-
-.project-meta-details span {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.project-meta-details svg {
-    width: 14px;
-    height: 14px;
-}
-
-.project-card {
-    background-color: #ffffff;
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    transition: var(--transition-normal);
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary-light);
-}
-
-/* Custom visual gradients for project cards */
-.project-image {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-}
-
-.project-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    transition: var(--transition-normal);
-}
-
-.project-placeholder svg {
-    width: 48px;
-    height: 48px;
-    opacity: 0.9;
-    transition: var(--transition-normal);
-}
-
-.project-card:hover .project-placeholder {
-    transform: scale(1.05);
-}
-
-.project-card:hover .project-placeholder svg {
+.modal-close:hover {
+    color: var(--secondary-color);
     transform: scale(1.1);
 }
 
-.bg-gradient-1 { background: var(--gradient-1); }
-.bg-gradient-2 { background: var(--gradient-2); }
-.bg-gradient-3 { background: var(--gradient-3); }
-
-.project-info {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.project-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-}
-
-.project-category {
-    font-weight: 700;
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.project-duration {
-    color: var(--text-muted);
-}
-
-.project-name {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 10px;
-}
-
-.project-description {
-    font-size: 0.925rem;
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 1.5rem;
-}
-
-.project-tech span {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    background-color: var(--bg-tertiary);
-    padding: 4px 10px;
-    border-radius: 4px;
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-    border-top: 1px solid var(--border-color);
-    padding-top: 1rem;
-}
-
-.project-link-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: var(--transition-fast);
-}
-
-.project-link-btn:hover {
-    color: var(--primary-color);
-}
-
-.project-link-btn svg {
-    width: 16px;
-    height: 16px;
+.modal-caption {
+    margin-top: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 /* ==========================================================================
-   8. Contact Section
+   10. Contact Section
    ========================================================================== */
 .contact {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
 }
 
 .contact-grid {
@@ -936,7 +1134,7 @@ section {
 
 /* Contact Form Styling */
 .contact-form-container {
-    background-color: #ffffff;
+    background-color: var(--bg-secondary);
     padding: 2.5rem;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
@@ -972,7 +1170,7 @@ section {
     padding: 0.75rem 1rem;
     border-radius: var(--border-radius-sm);
     border: 1px solid var(--border-color);
-    background-color: var(--bg-secondary);
+    background-color: #ffffff;
     color: var(--text-primary);
     transition: var(--transition-fast);
 }
@@ -981,7 +1179,6 @@ section {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    background-color: #ffffff;
     box-shadow: 0 0 0 3px var(--input-focus);
 }
 
@@ -1015,7 +1212,7 @@ section {
 }
 
 /* ==========================================================================
-   9. Footer
+   11. Footer
    ========================================================================== */
 .footer {
     background-color: var(--text-primary);
@@ -1062,7 +1259,7 @@ section {
 }
 
 /* ==========================================================================
-   10. Scroll to Top Button
+   12. Scroll to Top Button
    ========================================================================== */
 .scroll-to-top {
     position: fixed;
@@ -1102,7 +1299,7 @@ section {
 }
 
 /* ==========================================================================
-   11. Responsive Styles (Media Queries)
+   13. Responsive Styles (Media Queries)
    ========================================================================== */
 
 /* Tablet & Standard Small Screens */
@@ -1146,8 +1343,13 @@ section {
         gap: 3rem;
     }
 
-    .project-grid {
+    .competencies-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-deep-body {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .contact-grid {
@@ -1174,7 +1376,7 @@ section {
         flex-direction: column;
         align-items: center;
         padding: 3rem 0;
-        gap: 2.5rem;
+        gap: 2rem;
         transition: var(--transition-normal);
         border-top: 1px solid var(--border-color);
         box-shadow: var(--shadow-lg);
@@ -1189,6 +1391,15 @@ section {
         font-weight: 600;
     }
 
+    .navbar-actions {
+        margin-right: 0.5rem;
+    }
+
+    .btn-resume {
+        padding: 0.45rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
     .hero-title {
         font-size: 2rem;
     }
@@ -1198,8 +1409,29 @@ section {
         gap: 1rem;
     }
 
-    .project-grid {
+    .competencies-grid {
         grid-template-columns: 1fr;
+    }
+
+    .project-deep-card {
+        padding: 1.5rem;
+    }
+
+    .project-deep-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .project-deep-header-right {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .modal-close {
+        top: 20px;
+        right: 20px;
+        font-size: 2.5rem;
     }
 
     .contact-form-container {

@@ -1,4 +1,4 @@
-/* main.js - Interactive Scripts with Language Translation & GitHub API Integration */
+/* main.js - Web Portfolio Interactive Scripts, Localization & Diagram Enlarge Modals */
 
 document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
@@ -8,9 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
         ko: {
             nav_home: "Home",
             nav_about: "About",
+            nav_competencies: "Competencies",
             nav_experience: "Experience",
             nav_projects: "Projects",
             nav_contact: "Contact",
+            nav_resume: "이력서 다운로드",
             
             hero_tag: "Welcome to my space",
             hero_title: "안녕하세요,<br>성장하는 웹 개발자 <span class=\"highlight\">홍길동</span>입니다.",
@@ -32,6 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
             detail_job_val: "프론트엔드 / 풀스택 개발자",
             about_skills_title: "보유 기술",
 
+            comp_tag: "Core Skillsets",
+            comp_title: "핵심 기술 역량",
+            comp1_title: "시스템 프로그래밍 (System Programming)",
+            comp2_title: "네트워크 및 시뮬레이션 (Network & Simulation)",
+            comp3_title: "분석 및 스크립팅 (Analysis & Scripting)",
+
             exp_tag: "Career Journey",
             exp_title: "경력 및 활동",
             exp1_company: "A 테크놀로지",
@@ -52,11 +60,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
             proj_tag: "My Works",
             proj_title: "주요 프로젝트",
-            proj_filter_all: "전체",
-            proj_filter_starred: "인기 항목 (Starred)",
-            proj_filter_recent: "최근 업데이트",
-            projects_loading_text: "GitHub에서 프로젝트를 불러오는 중입니다...",
-            projects_error_text: "GitHub API 호출에 실패했습니다. 아래 링크에서 전체 프로젝트를 확인하실 수 있습니다.",
+            diag_zoom: "클릭하여 다이어그램 확대",
+
+            p1_title: "NS-3 기반 무선 네트워크 라우팅 프로토콜 시뮬레이터",
+            p1_summary: "대규모 무선 메시 네트워크 환경에서 멀티홉 라우팅 프로토콜의 패킷 전송 효율을 검증하기 위한 시뮬레이터 개발",
+            p1_duration_role: "2024.10 - 2025.02 (연구원 / 시뮬레이션 개발, 기여도 100%)",
+            p1_prob_title: "문제 상황 (Problem)",
+            p1_prob_desc: "노드 밀도 증가 및 이동성에 따른 무선 채널 간섭으로 패킷 손실률(Packet Loss Rate)이 급격히 증가하고 전송 신뢰도가 떨어지는 성능 저하 병목 현상이 발생했습니다.",
+            p1_sol_title: "해결 방안 (Solution)",
+            p1_sol_desc: "노드 잔여 에너지량 및 실시간 SINR 채널 품질 가중치를 계산하여 혼잡도가 낮고 전송 능력이 보장된 경로로 다중 경로 우회(Detour)하는 신규 알고리즘(E-AODV)을 직접 C++ 설계하여 NS-3에 탑재했습니다.",
+            p1_res_title: "수행 결과 (Result)",
+            p1_res_desc: "네트워크 데이터 처리량(Throughput) 24% 향상, 패킷 전송 성공률(PDR) 15% 개선 및 전력 불균형 해소를 통한 개별 노드 전력 소모 가독 최적화로 전체 토폴로지 수명을 1.8배 개선했습니다.",
+            p1_trouble_title: "기술적 난관 및 해결 과정 (Troubleshooting)",
+            p1_trouble_desc: "<strong>메모리 릭 및 크래시:</strong> 100개 이상의 노드가 참여하는 장시간 대규모 시뮬레이션 시 패킷 포인터 해제 실패로 RAM 누수가 심화되며 약 12시간 실행 후 시뮬레이터가 갑자기 종료되는 현상 발생. Linux 환경에서 <strong>Valgrind(Memcheck)</strong> 프로파일링을 실행하여 C++ 스마트 포인터가 우회된 원형 버퍼 내 누수 트리거 지점을 정밀 포착. `std::shared_ptr` 스마트 포인터 도입 및 의존성 주입 시점 정리, 누수 버퍼의 명시적 `clear()` 메소드 추가 작업을 통해 120시간 연속 시뮬레이션에서도 메모리 점유율을 일정하게 유지하며 크래시 병목을 원천 해결함.",
+
+            p2_title: "고성능 리눅스 TCP/IP 원시 패킷 캡처 및 아키텍처 분석 시스템",
+            p2_summary: "리눅스 네트워크 카드 커널 수준에서 들어오는 원시 소켓(Raw Socket) 데이터를 손실 없이 수집하고 실시간 패킷 헤더 정밀 파싱 처리를 담당하는 분산형 분석기 개발",
+            p2_duration_role: "2024.04 - 2024.08 (시스템 개발 / 메인 아키텍트, 기여도 100%)",
+            p2_prob_title: "문제 상황 (Problem)",
+            p2_prob_desc: "기가비트 이더넷 급 단일 버퍼 수신 환경에서 패킷 유입량이 초당 10만 개(100k pps) 수준으로 급증하자 파싱 처리 속도 지연으로 OS 소켓 링버퍼 오버플로우 및 패킷 유실 발생.",
+            p2_sol_title: "해결 방안 (Solution)",
+            p2_sol_desc: "패킷 수신(I/O 스레드)과 패킷 파싱(워커 스레드)을 완전히 분리하는 고속 무잠금 원형 큐(Lock-free Circular Queue) 동기화 아키텍처 및 POSIX 스레드 풀(Thread Pool) 최적화 도입.",
+            p2_res_title: "수행 결과 (Result)",
+            p2_res_desc: "극한의 트래픽 환경에서도 무손실 실시간 패킷 수집률 100% (유실률 0.00%) 달성, 기가비트 환경 대비 CPU 메모리 자원 소모율 18% 절감 및 실시간 PCAP 규격 연동 성공.",
+            p2_trouble_title: "기술적 난관 및 해결 과정 (Troubleshooting)",
+            p2_trouble_desc: "<strong>스레드 동기화 락 경합 병목:</strong> 멀티 스레드가 큐의 쓰기/읽기 인덱스 포인터에 동시다발적으로 쓰기를 시도하면서 뮤텍스 락(Mutex Lock) 점유 대기 시간이 누적되어 속도가 크게 떨어지는 병목 현상 발생. C++11의 `std::atomic` 라이브러리를 사용해 <strong>CAS (Compare-And-Swap)</strong> 연산 기반의 무잠금(Lock-free) 프로듀서-컨슈머 링버퍼 알고리즘으로 전면 리팩토링 진행. 결과적으로 임계 구역 락 대기 오버헤드를 완전히 제거함으로써 단일 코어 패킷 유입 한계를 기존 대비 420% 이상 끌어올리는 극적인 하드웨어 성능 개선 달성.",
 
             contact_tag: "Let's Talk",
             contact_title: "연락처 및 제안",
@@ -77,19 +105,16 @@ document.addEventListener('DOMContentLoaded', () => {
             form_success_desc: "빠른 시일 내에 기재해주신 이메일로 답변드리겠습니다. 감사합니다.",
 
             footer_copyright: "© 2026 홍길동. All rights reserved.",
-
-            // Dynamic project specific translations
-            proj_duration: "업데이트: ",
-            proj_btn_demo: "라이브 데모",
-            proj_btn_repo: "GitHub 레포",
-            proj_no_desc: "상세 설명이 등록되지 않은 레포지토리입니다."
+            modal_caption: "클릭하면 원래 크기로 축소됩니다."
         },
         en: {
             nav_home: "Home",
             nav_about: "About",
+            nav_competencies: "Competencies",
             nav_experience: "Experience",
             nav_projects: "Projects",
             nav_contact: "Contact",
+            nav_resume: "Download Resume",
             
             hero_tag: "Welcome to my space",
             hero_title: "Hello,<br>I am <span class=\"highlight\">Gildong Hong</span>, a growing web developer.",
@@ -111,6 +136,12 @@ document.addEventListener('DOMContentLoaded', () => {
             detail_job_val: "Frontend / Full-Stack Developer",
             about_skills_title: "My Skills",
 
+            comp_tag: "Core Skillsets",
+            comp_title: "Core Competencies",
+            comp1_title: "System Programming",
+            comp2_title: "Network & Simulation",
+            comp3_title: "Analysis & Scripting",
+
             exp_tag: "Career Journey",
             exp_title: "Experience",
             exp1_company: "A Technology",
@@ -131,11 +162,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
             proj_tag: "My Works",
             proj_title: "Projects",
-            proj_filter_all: "All",
-            proj_filter_starred: "Starred",
-            proj_filter_recent: "Recent",
-            projects_loading_text: "Fetching repositories from GitHub...",
-            projects_error_text: "Failed to load GitHub repositories. You can explore them directly via the link below.",
+            diag_zoom: "Click to Enlarge Diagram",
+
+            p1_title: "NS-3 Wireless Network Routing Protocol Simulator",
+            p1_summary: "High-performance C++ simulator validating packet delivery efficiency of multi-hop routing protocols in large-scale wireless mesh networks.",
+            p1_duration_role: "2024.10 - 2025.02 (Researcher / Simulation Lead, Contribution: 100%)",
+            p1_prob_title: "Problem",
+            p1_prob_desc: "Wireless channel interference caused by node density and high mobility led to massive packet loss rate and network delivery reliability degradation.",
+            p1_sol_title: "Solution",
+            p1_sol_desc: "Designed a dynamic multi-path detour routing algorithm (E-AODV) weighting node energy level and SINR channel quality, implemented into native C++ NS-3 simulation.",
+            p1_res_title: "Result",
+            p1_res_desc: "Improved network throughput by 24%, increased Packet Delivery Ratio (PDR) by 15%, and extended network lifetime by 1.8x via balanced node power consumption.",
+            p1_trouble_title: "Troubleshooting & Key Challenge",
+            p1_trouble_desc: "<strong>Memory Leak & Crash:</strong> During long-running 100+ node simulations, heap memory consumption kept increasing until the simulator crashed after 12 hours. Executed <strong>Valgrind Memcheck</strong> profiling on Linux and isolated packet pointer leak points within raw cyclic packet buffers. Replaced with C++11 smart pointers (`std::shared_ptr`), re-structured buffer clearing sequences, and added explicit `clear()` methods on simulation reset, maintaining flat memory usage and proving 120-hour simulation stability.",
+
+            p2_title: "High-Performance Linux TCP/IP Packet Capturer & Analyzer",
+            p2_summary: "High-speed Linux Raw Socket packet collector captures and parses network headers with zero drop rates, converting Ethernet/IP/TCP structures into analytical metrics.",
+            p2_duration_role: "2024.04 - 2024.08 (System Engineer / Lead Architect, Contribution: 100%)",
+            p2_prob_title: "Problem",
+            p2_prob_desc: "When packet volume spiked to 100k+ packets per second (pps) on a Gigabit Ethernet line, slow parsing logic triggered ring buffer overflow, resulting in massive packet drops.",
+            p2_sol_title: "Solution",
+            p2_sol_desc: "Separated Network I/O from parsing tasks using a high-speed lock-free circular buffer and pre-allocated POSIX thread pool for parallel worker queue handling.",
+            p2_res_title: "Result",
+            p2_res_desc: "Achieved 100.00% packet ingestion rate (0% loss) under extreme load, decreased overall CPU utilization overhead by 18%, and verified live export compatible with Wireshark PCAP.",
+            p2_trouble_title: "Troubleshooting & Key Challenge",
+            p2_trouble_desc: "<strong>Lock Contention Bottleneck:</strong> Worker threads competing for ring buffer read/write head pointers triggered extensive Mutex wait times, slowing down packet ingestion rate. Refactored the architecture using C++11 atomic library (`std::atomic`) to implement a lock-free Ring Buffer utilizing CAS (Compare-And-Swap) memory models. Removed context-switching and locks completely, increasing throughput threshold by 420%+ and fully resolving real-time data flow starvation issues.",
 
             contact_tag: "Let's Talk",
             contact_title: "Contact",
@@ -156,12 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
             form_success_desc: "I'll review it and get back to your email as soon as possible. Thank you!",
 
             footer_copyright: "© 2026 Gildong Hong. All rights reserved.",
-
-            // Dynamic project specific translations
-            proj_duration: "Updated: ",
-            proj_btn_demo: "Live Demo",
-            proj_btn_repo: "GitHub Repo",
-            proj_no_desc: "No description provided for this repository."
+            modal_caption: "Click anywhere to close or shrink diagram."
         }
     };
 
@@ -170,13 +216,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Helper function to apply translations to static elements
     function applyTranslations(lang) {
-        // Translate normal elements
+        // Translate elements with data-i18n attribute
         const i18nElements = document.querySelectorAll('[data-i18n]');
         i18nElements.forEach(elem => {
             const key = elem.getAttribute('data-i18n');
             if (translations[lang] && translations[lang][key]) {
                 // Keep html tag integrity for certain styled blocks
-                if (key === 'hero_title' || key.includes('title') || key.includes('desc') || key.includes('task')) {
+                if (key === 'hero_title' || key.includes('title') || key.includes('desc') || key.includes('task') || key.includes('summary')) {
                     elem.innerHTML = translations[lang][key];
                 } else {
                     elem.textContent = translations[lang][key];
@@ -184,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Translate placeholders
+        // Translate placeholders with data-i18n-placeholder attribute
         const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
         placeholderElements.forEach(elem => {
             const key = elem.getAttribute('data-i18n-placeholder');
@@ -193,14 +239,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Update Toggle button display text
+        // Update Toggle button display text (shows opposite language to switch to)
         const langText = document.querySelector('.lang-text');
         if (langText) {
             langText.textContent = lang === 'ko' ? 'EN' : 'KO';
         }
-
-        // Re-render dynamic projects to update buttons, labels, and fallback descriptions
-        renderProjects(fetchedRepos, lang);
     }
 
     // Language Toggle Click Event
@@ -259,208 +302,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // 4. GitHub API Integration & Dynamic Card Rendering
+    // 4. Click to Enlarge Diagram Modal
     // ==========================================================================
-    const projectGrid = document.getElementById('project-grid');
-    const projectsLoading = document.getElementById('projects-loading');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    
-    let fetchedRepos = []; // Cache for fetched repositories
+    const diagrams = document.querySelectorAll('.project-deep-diagram-container');
+    const modal = document.getElementById('diagram-modal');
+    const modalContent = document.getElementById('modal-content');
+    const modalClose = document.getElementById('modal-close');
 
-    // Map of custom titles and descriptions for specific repositories to make it look premium
-    const customRepoDetails = {
-        'StyleHub': {
-            ko: { name: 'React 쇼핑 플랫폼 "StyleHub"', desc: '사용자가 원하는 스타일의 옷을 탐색하고 장바구니에 담을 수 있는 반응형 커머스 웹 어플리케이션입니다.' },
-            en: { name: 'React E-Commerce Platform "StyleHub"', desc: 'A responsive style-focused e-commerce web application where users can browse clothes, apply filters, and manage a cart.' }
-        },
-        'TaskFlow': {
-            ko: { name: '협업 스케줄러 "TaskFlow"', desc: '팀원들과 태스크를 실시간으로 공유하고, 드래그 앤 드롭으로 칸반 보드를 관리할 수 있는 생산성 도구입니다.' },
-            en: { name: 'Collaboration Scheduler "TaskFlow"', desc: 'A team-driven productivity platform featuring drag-and-drop Kanban boards with real-time sync via Socket.io.' }
-        },
-        'Lyricist': {
-            ko: { name: '음악 가사 플레이어 "Lyricist"', desc: '오디오 파일과 가사 텍스트를 싱크 연동하여 화면에 가사가 시간 흐름에 맞춰 연동되도록 정밀 제작한 오디오 플레이어입니다.' },
-            en: { name: 'Lyrics Synced Player "Lyricist"', desc: 'A refined HTML5 audio player syncing audio timelines with lyric datasets to flow elegantly with audio progress.' }
-        }
-    };
-
-    // Fetch repositories from GitHub API
-    async function fetchGitHubProjects() {
-        try {
-            const username = 'gitgio99';
-            const response = await fetch(`https://api.github.com/users/${username}/repos`);
-            
-            if (!response.ok) {
-                throw new Error('API request failed');
-            }
-
-            const repos = await response.json();
-            
-            // Filter out forks & sort by recently updated
-            fetchedRepos = repos
-                .filter(repo => !repo.fork)
-                .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-
-            // Hide Loading Spinner
-            if (projectsLoading) {
-                projectsLoading.classList.add('hidden');
-            }
-
-            renderProjects(fetchedRepos, currentLang);
-        } catch (error) {
-            console.error('Error fetching repositories:', error);
-            handleFetchError();
-        }
-    }
-
-    // Render projects grid based on fetched repositories and active language
-    function renderProjects(repos, lang) {
-        if (!projectGrid) return;
-        
-        projectGrid.innerHTML = ''; // Clear previous contents
-
-        if (repos.length === 0) {
-            return;
-        }
-
-        repos.forEach((repo, index) => {
-            const card = document.createElement('div');
-            card.className = 'project-card';
-            
-            // Determine category or tags for filtering
-            // Filter mapping: 'starred' (has stargazers) vs 'recent' (index < 3 recently updated)
-            let filterCategories = ['all'];
-            if (repo.stargazers_count > 0) {
-                filterCategories.push('starred');
-            }
-            if (index < 3) {
-                filterCategories.push('recent');
-            }
-            card.setAttribute('data-categories', filterCategories.join(' '));
-
-            // Get translated name and description
-            let displayName = repo.name;
-            let displayDesc = repo.description || translations[lang].proj_no_desc;
-
-            if (customRepoDetails[repo.name] && customRepoDetails[repo.name][lang]) {
-                displayName = customRepoDetails[repo.name][lang].name;
-                displayDesc = customRepoDetails[repo.name][lang].desc;
-            }
-
-            // Tech Stack tag extraction (Language + Topics)
-            let techStack = [];
-            if (repo.language) techStack.push(repo.language);
-            if (repo.topics && Array.isArray(repo.topics)) {
-                techStack = [...techStack, ...repo.topics.slice(0, 2)];
-            }
-            // Fallback tech badges if empty
-            if (techStack.length === 0) {
-                techStack = ['Git', 'GitHub'];
-            }
-
-            // Format date
-            const updateDate = new Date(repo.updated_at).toLocaleDateString(lang === 'ko' ? 'ko-KR' : 'en-US', {
-                year: 'numeric',
-                month: 'short'
+    if (diagrams && modal && modalContent) {
+        diagrams.forEach(diagram => {
+            diagram.addEventListener('click', () => {
+                const originalSvg = diagram.querySelector('svg');
+                if (originalSvg) {
+                    // Clone the SVG so it displays properly in the modal
+                    const clonedSvg = originalSvg.cloneNode(true);
+                    clonedSvg.removeAttribute('viewBox'); // Allow responsive resizing or adjust width
+                    clonedSvg.setAttribute('width', '100%');
+                    clonedSvg.setAttribute('height', 'auto');
+                    
+                    // Clear previous content and append cloned SVG
+                    modalContent.innerHTML = '';
+                    modalContent.appendChild(clonedSvg);
+                    
+                    // Display the modal
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Lock background scrolling
+                }
             });
-
-            // Cycle placeholder icons and gradients
-            const gradientClass = `bg-gradient-${(index % 3) + 1}`;
-            let placeholderIcon = 'folder';
-            if (repo.language === 'JavaScript' || repo.language === 'TypeScript') placeholderIcon = 'code';
-            else if (repo.language === 'HTML' || repo.language === 'CSS') placeholderIcon = 'layout';
-            else if (repo.homepage) placeholderIcon = 'globe';
-
-            // Card Inner HTML
-            card.innerHTML = `
-                <div class="project-image">
-                    <div class="project-placeholder ${gradientClass}">
-                        <i data-lucide="${placeholderIcon}" class="placeholder-icon"></i>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <div class="project-meta">
-                        <div class="project-meta-details">
-                            <span><i data-lucide="star"></i> ${repo.stargazers_count}</span>
-                            <span><i data-lucide="git-fork"></i> ${repo.forks_count}</span>
-                        </div>
-                        <span class="project-duration">${translations[lang].proj_duration}${updateDate}</span>
-                    </div>
-                    <h3 class="project-name">${displayName}</h3>
-                    <p class="project-description">${displayDesc}</p>
-                    <div class="project-tech">
-                        ${techStack.map(tech => `<span>${tech}</span>`).join('')}
-                    </div>
-                    <div class="project-links">
-                        ${repo.homepage ? `
-                            <a href="${repo.homepage}" target="_blank" class="project-link-btn">
-                                <i data-lucide="external-link"></i> ${translations[lang].proj_btn_demo}
-                            </a>
-                        ` : ''}
-                        <a href="${repo.html_url}" target="_blank" class="project-link-btn">
-                            <i data-lucide="github"></i> ${translations[lang].proj_btn_repo}
-                        </a>
-                    </div>
-                </div>
-            `;
-
-            projectGrid.appendChild(card);
         });
 
-        // Initialize Lucide icons inside the dynamically rendered cards
-        lucide.createIcons();
-    }
+        // Helper function to close modal
+        const closeModal = () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore background scrolling
+            setTimeout(() => {
+                modalContent.innerHTML = ''; // Clean up content
+            }, 300);
+        };
 
-    // Handles API Failures by rendering standard offline cards
-    function handleFetchError() {
-        if (projectsLoading) {
-            projectsLoading.innerHTML = `
-                <i data-lucide="alert-circle" class="text-secondary" style="width: 40px; height: 40px;"></i>
-                <p style="text-align:center; max-width: 500px; line-height: 1.5;">
-                    ${translations[currentLang].projects_error_text}
-                </p>
-                <a href="https://github.com/gitgio99" target="_blank" class="btn btn-outline" style="margin-top: 10px;">
-                    <i data-lucide="github"></i> GitHub Profile
-                </a>
-            `;
-            lucide.createIcons();
+        // Close when clicking Close (X) button
+        if (modalClose) {
+            modalClose.addEventListener('click', closeModal);
         }
 
-        // Render mock/simulated repos as fallbacks so page is never empty
-        const fallbackRepos = [
-            { name: 'StyleHub', description: 'React 쇼핑 플랫폼', stargazers_count: 5, forks_count: 2, updated_at: '2026-07-20', language: 'JavaScript', html_url: 'https://github.com/gitgio99', topics: ['React', 'CSS'] },
-            { name: 'TaskFlow', description: '협업 스케줄러 태스크 매니저', stargazers_count: 8, forks_count: 4, updated_at: '2026-06-15', language: 'TypeScript', html_url: 'https://github.com/gitgio99', homepage: '#', topics: ['Next.js', 'Socket.io'] },
-            { name: 'Lyricist', description: '가사 매핑 음악 플레이어', stargazers_count: 3, forks_count: 1, updated_at: '2026-05-10', language: 'JavaScript', html_url: 'https://github.com/gitgio99', topics: ['HTML5', 'Audio'] }
-        ];
+        // Close when clicking background backdrop
+        modal.addEventListener('click', (e) => {
+            // Only close if clicking the backdrop, close button, or caption
+            if (e.target === modal || e.target.classList.contains('modal-caption')) {
+                closeModal();
+            }
+        });
 
-        fetchedRepos = fallbackRepos;
-        renderProjects(fetchedRepos, currentLang);
-    }
-
-    // Project filtering mechanism (Modified to match newly loaded API categories)
-    if (filterButtons.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active from all and add to clicked
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                const filterValue = button.getAttribute('data-filter');
-                const projectCards = document.querySelectorAll('.project-card');
-
-                projectCards.forEach(card => {
-                    const categories = card.getAttribute('data-categories').split(' ');
-
-                    if (filterValue === 'all' || categories.includes(filterValue)) {
-                        card.style.display = 'flex';
-                        card.style.opacity = '0';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                        }, 50);
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
+        // Close when pressing Escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
         });
     }
 
@@ -557,6 +454,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // 8. Initialization Settings
     // ==========================================================================
-    applyTranslations(currentLang); // Apply saved language first
-    fetchGitHubProjects();         // Fetch live projects from GitHub API
+    applyTranslations(currentLang); // Apply saved/default language layout
 });
