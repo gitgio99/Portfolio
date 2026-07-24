@@ -1,78 +1,62 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹 포트폴리오</title>
-    <!-- Google Fonts - Inter for english, Pretendard/Noto Sans KR for Korean -->
+    <title>Portfolio | Gildong Hong</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- Lucide Icons for clean, modern interface icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation Header -->
     <header class="navbar">
         <div class="container navbar-container">
             <a href="#" class="logo">PORTFOLIO<span>.</span></a>
-            
             <nav class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active" data-i18n="nav_home">Home</a>
-                <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
-                <a href="#competencies" class="nav-link" data-i18n="nav_competencies">Competencies</a>
-                <a href="#experience" class="nav-link" data-i18n="nav_experience">Experience</a>
-                <a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a>
-                <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#competencies" class="nav-link">Competencies</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
-
             <div class="navbar-actions">
-                <!-- PDF Resume Button -->
-                <a href="#" class="btn-resume" id="resume-btn" download>
-                    <i data-lucide="download"></i>
-                    <span data-i18n="nav_resume">이력서 다운로드</span>
-                </a>
-
-                <!-- Language Toggle Button -->
-                <button class="lang-toggle-btn" id="lang-toggle" aria-label="언어 전환">
-                    <span class="lang-text">EN</span>
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+                    <i data-lucide="moon"></i>
                 </button>
-
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="메뉴 열기">
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Menu">
                     <i data-lucide="menu"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container hero-container">
             <div class="hero-content">
-                <span class="hero-tag" data-i18n="hero_tag">Welcome to my space</span>
-                <h1 class="hero-title" id="hero-title" data-i18n="hero_title">안녕하세요,<br>성장하는 웹 개발자 <span class="highlight">홍길동</span>입니다.</h1>
-                <p class="hero-description" data-i18n="hero_desc">
-                    사용자 경험을 최우선으로 생각하며, 깔끔하고 유지보수하기 좋은 코드를 작성합니다. 최신 웹 기술 트렌드에 관심이 많고 끊임없이 배움을 추구합니다.
+                <span class="hero-tag">Embedded Engineer</span>
+                <h1 class="hero-title" id="hero-title">Hello,<br>I am <span class="highlight">Gildong Hong</span>, an Embedded Engineer.</h1>
+                <p class="hero-description">
+                    Passionate about low-level optimization and system performance. I build reliable, high-speed, and maintainable systems for embedded platforms.
                 </p>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary">
-                        <span data-i18n="btn_view_projects">프로젝트 보기</span> <i data-lucide="arrow-right"></i>
+                        View Projects <i data-lucide="arrow-right"></i>
                     </a>
-                    <a href="#contact" class="btn btn-outline" data-i18n="btn_contact">연락하기</a>
+                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
                 </div>
             </div>
             <div class="hero-visual">
-                <!-- A sleek, stylized geometric design to give a modern developer feel -->
                 <div class="visual-blob"></div>
                 <div class="visual-card visual-card-1">
-                    <i data-lucide="code" class="text-primary"></i>
-                    <span data-i18n="visual_code">Clean Code</span>
+                    <i data-lucide="cpu" class="text-primary"></i>
+                    <span>Low-Level Control</span>
                 </div>
                 <div class="visual-card visual-card-2">
-                    <i data-lucide="smartphone" class="text-secondary"></i>
-                    <span data-i18n="visual_responsive">Responsive Design</span>
+                    <i data-lucide="terminal" class="text-secondary"></i>
+                    <span>Real-Time Systems</span>
                 </div>
             </div>
         </div>
@@ -81,63 +65,60 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag" data-i18n="about_tag">About Me</span>
-                <h2 class="section-title" data-i18n="about_title">자기소개</h2>
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Introduction</h2>
                 <div class="section-line"></div>
             </div>
-
             <div class="about-grid">
                 <div class="about-info">
-                    <h3 data-i18n="about_info_title">도전을 즐기고 소통을 중요시합니다</h3>
-                    <p data-i18n="about_info_desc">
-                        웹 프론트엔드 및 백엔드 기술에 대한 깊은 이해를 바탕으로, 복잡한 비즈니스 로직을 심플하고 직관적인 화면으로 풀어내는 것에 즐거움을 느낍니다. 
-                        단순히 기획서대로 구현하는 것을 넘어, "왜 이 기능이 필요한가?"에 대한 고민을 함께 나누는 개발자가 되고자 노력합니다.
+                    <h3>I enjoy taking challenges and appreciate open communication</h3>
+                    <p>
+                        Based on a deep understanding of frontend and backend technologies, I enjoy resolving complex business logic into simple, intuitive user interfaces. 
+                        Going beyond just implementing features from specs, I strive to collaborate on understanding "Why is this feature needed?"
                     </p>
                     <div class="personal-details">
                         <div class="detail-item">
-                            <span class="detail-label" data-i18n="detail_name_label">이름</span>
-                            <span class="detail-value" data-i18n="detail_name_val">홍길동</span>
+                            <span class="detail-label">Name</span>
+                            <span class="detail-value">Gildong Hong</span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label" data-i18n="detail_email_label">이메일</span>
+                            <span class="detail-label">Email</span>
                             <span class="detail-value">gildong@example.com</span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label" data-i18n="detail_phone_label">휴대폰</span>
+                            <span class="detail-label">Phone</span>
                             <span class="detail-value">010-1234-5678</span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label" data-i18n="detail_job_label">희망 직무</span>
-                            <span class="detail-value" data-i18n="detail_job_val">Frontend / Full-Stack Developer</span>
+                            <span class="detail-label">Target Role</span>
+                            <span class="detail-value">Embedded Engineer</span>
                         </div>
                     </div>
                 </div>
-
                 <div class="about-skills">
-                    <h3 data-i18n="about_skills_title">My Skills</h3>
+                    <h3>My Skills</h3>
                     <div class="skills-category">
-                        <h4>Frontend</h4>
+                        <h4>Programming Languages</h4>
                         <div class="skills-tags">
-                            <span class="tag">HTML5 / CSS3</span>
-                            <span class="tag">JavaScript (ES6+)</span>
-                            <span class="tag">TypeScript</span>
-                            <span class="tag">React.js</span>
-                            <span class="tag">Next.js</span>
-                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">C</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Assembly (ARM/x86)</span>
+                            <span class="tag">Bash Shell</span>
                         </div>
                     </div>
                     <div class="skills-category">
-                        <h4>Backend & Tools</h4>
+                        <h4>Embedded & HW Control</h4>
                         <div class="skills-tags">
-                            <span class="tag">Node.js</span>
-                            <span class="tag">Express</span>
-                            <span class="tag">Git & GitHub</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">Figma</span>
+                            <span class="tag">MCU (ARM Cortex-M, AVR)</span>
+                            <span class="tag">RTOS (FreeRTOS)</span>
+                            <span class="tag">UART / SPI / I2C</span>
+                            <span class="tag">CAN Bus</span>
+                            <span class="tag">GPIO / ADC / DAC</span>
+                            <span class="tag">DMA Control</span>
                         </div>
                     </div>
                 </div>
@@ -145,527 +126,116 @@
         </div>
     </section>
 
-    <!-- Core Competencies Section -->
     <section id="competencies" class="competencies">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag" data-i18n="comp_tag">Core Skillsets</span>
-                <h2 class="section-title" data-i18n="comp_title">핵심 기술 역량</h2>
+                <span class="section-tag">Core Skillsets</span>
+                <h2 class="section-title">Core Competencies</h2>
                 <div class="section-line"></div>
             </div>
-
             <div class="competencies-grid">
-                <!-- Competency Card 1 -->
-                <div class="competency-card">
-                    <div class="competency-header">
-                        <div class="comp-icon bg-gradient-1">
-                            <i data-lucide="cpu"></i>
-                        </div>
-                        <h3 data-i18n="comp1_title">시스템 프로그래밍 (System Programming)</h3>
-                    </div>
-                    <div class="comp-body">
-                        <div class="comp-skill">
-                            <div class="comp-skill-info">
-                                <span>C / C++</span>
-                                <span class="comp-percent">90%</span>
-                            </div>
-                            <div class="comp-progress-bar"><div class="progress" style="width: 90%;"></div></div>
-                        </div>
-                        <div class="comp-skill">
-                            <div class="comp-skill-info">
-                                <span>POSIX Threads & Multithreading</span>
-                                <span class="comp-percent">85%</span>
-                            </div>
-                            <div class="comp-progress-bar"><div class="progress" style="width: 85%;"></div></div>
-                        </div>
-                        <div class="comp-skill">
-                            <div class="comp-skill-info">
-                                <span>Linux OS Internals & Systems Calls</span>
-                                <span class="comp-percent">80%</span>
-                            </div>
-                            <div class="comp-progress-bar"><div class="progress" style="width: 80%;"></div></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Competency Card 2 -->
-                <div class="competency-card">
-                    <div class="competency-header">
-                        <div class="comp-icon bg-gradient-2">
-                            <i data-lucide="network"></i>
-                        </div>
-                        <h3 data-i18n="comp2_title">네트워크 및 시뮬레이션 (Network & Simulation)</h3>
-                    </div>
-                    <div class="comp-body">
-                        <div class="comp-skill">
-                            <div class="comp-skill-info">
-                                <span>NS3 (Network Simulator 3)</span>
-                                <span class="comp-percent">85%</span>
-                            </div>
-                            <div class="comp-progress-bar"><div class="progress" style="width: 85%;"></div></div>
-                        </div>
-                        <div class="comp-skill">
-                            <div class="comp-skill-info">
-                                <span>TCP/IP & Routing Protocols</span>
-                                <span class="comp-percent">85%</span>
-                            </div>
-                            <div class="comp-progress-bar"><div class="progress" style="width: 85%;"></div></div>
-                        </div>
-                        <div class="comp-skill">
-                            <div class="comp-skill-info">
-                                <span>Network Packet Socket Capture (PCAP)</span>
-                                <span class="comp-percent">80%</span>
-                            </div>
-                            <div class="comp-progress-bar"><div class="progress" style="width: 80%;"></div></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Competency Card 3 -->
-                <div class="competency-card">
-                    <div class="competency-header">
-                        <div class="comp-icon bg-gradient-3">
-                            <i data-lucide="file-json"></i>
-                        </div>
-                        <h3 data-i18n="comp3_title">분석 및 스크립팅 (Analysis & Scripting)</h3>
-                    </div>
-                    <div class="comp-body">
-                        <div class="comp-skill">
-                            <div class="comp-skill-info">
-                                <span>Python</span>
-                                <span class="comp-percent">90%</span>
-                            </div>
-                            <div class="comp-progress-bar"><div class="progress" style="width: 90%;"></div></div>
-                        </div>
-                        <div class="comp-skill">
-                            <div class="comp-skill-info">
-                                <span>Data Visualization (Matplotlib, Pandas)</span>
-                                <span class="comp-percent">80%</span>
-                            </div>
-                            <div class="comp-progress-bar"><div class="progress" style="width: 80%;"></div></div>
-                        </div>
-                        <div class="comp-skill">
-                            <div class="comp-skill-info">
-                                <span>Automation Scripting & Shell programming</span>
-                                <span class="comp-percent">85%</span>
-                            </div>
-                            <div class="comp-progress-bar"><div class="progress" style="width: 85%;"></div></div>
-                        </div>
-                    </div>
-                </div>
+                <div class="competency-card"><h3>System Programming</h3></div>
+                <div class="competency-card"><h3>Network & Simulation</h3></div>
+                <div class="competency-card"><h3>Analysis & Scripting</h3></div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag" data-i18n="exp_tag">Career Journey</span>
-                <h2 class="section-title" data-i18n="exp_title">경력 및 활동</h2>
+                <span class="section-tag">Career Journey</span>
+                <h2 class="section-title">Experience</h2>
                 <div class="section-line"></div>
-            </div>
-
-            <div class="timeline">
-                <!-- Timeline Item 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024.03 - 현재</div>
-                    <div class="timeline-content">
-                        <h3 data-i18n="exp1_company">A 테크놀로지</h3>
-                        <p class="role" data-i18n="exp1_role">프론트엔드 개발자 (사원)</p>
-                        <ul class="task-list">
-                            <li data-i18n="exp1_task1">자사 이커머스 플랫폼의 웹 어플리케이션 고도화 및 리팩토링</li>
-                            <li data-i18n="exp1_task2">페이지 로딩 속도 향상 (초기 렌더링 속도 30% 개선)</li>
-                            <li data-i18n="exp1_task3">디자인 시스템 구축 및 공통 컴포넌트 라이브러리 개발</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2023.07 - 2024.01</div>
-                    <div class="timeline-content">
-                        <h3 data-i18n="exp2_company">스마트 코딩 아카데미</h3>
-                        <p class="role" data-i18n="exp2_role">웹 개발자 양성 과정 수료</p>
-                        <ul class="task-list">
-                            <li data-i18n="exp2_task1">HTML, CSS, JavaScript, React 기반의 웹 퍼블리싱 학습</li>
-                            <li data-i18n="exp2_task2">Node.js 및 Express를 활용한 RESTful API 설계 및 DB 연동 실습</li>
-                            <li data-i18n="exp2_task3">팀 내 프론트엔드 리더로서 3개의 웹 어플리케이션 프로젝트 완료</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2019.03 - 2023.02</div>
-                    <div class="timeline-content">
-                        <h3 data-i18n="exp3_company">한국대학교</h3>
-                        <p class="role" data-i18n="exp3_role">컴퓨터공학과 학사 졸업</p>
-                        <ul class="task-list">
-                            <li data-i18n="exp3_task1">알고리즘, 자료구조, 네트워크, 운영체제 등 핵심 컴퓨터공학 이론 이수</li>
-                            <li data-i18n="exp3_task2">웹 프로그래밍 과목 우수 성적 획득</li>
-                            <li data-i18n="exp3_task3">졸업 프로젝트: 웹 기반 스케줄링 협업 툴 개발 (최우수상 수상)</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag" data-i18n="proj_tag">My Works</span>
-                <h2 class="section-title" data-i18n="proj_title">주요 프로젝트</h2>
+                <span class="section-tag">My Works</span>
+                <h2 class="section-title">Main Projects</h2>
                 <div class="section-line"></div>
             </div>
-
             <div class="projects-deep-list">
-                <!-- Deep-dive Project 1 -->
                 <div class="project-deep-card">
-                    <div class="project-deep-header">
+                    <div class="project-deep-header" onclick="this.parentElement.classList.toggle('active')">
                         <div class="project-deep-header-left">
-                            <h3 data-i18n="p1_title">NS-3 기반 무선 네트워크 라우팅 프로토콜 시뮬레이터</h3>
-                            <p class="project-deep-sub" data-i18n="p1_summary">대규모 무선 메시 네트워크 환경에서 멀티홉 라우팅 프로토콜의 패킷 전송 효율을 검증하기 위한 시뮬레이터 개발</p>
-                            <span class="project-deep-time" data-i18n="p1_duration_role">2024.10 - 2025.02 (연구원 / 시뮬레이션 개발, 기여도 100%)</span>
+                            <h3>TCP-based Remote Device Control System</h3>
+                            <p>Server-client architecture for remote hardware control using Raspberry Pi 4, POSIX threads, and shared libraries.</p>
                         </div>
-                        <div class="project-deep-header-right">
-                            <a href="https://github.com/gitgio99" target="_blank" class="btn btn-outline btn-sm">
-                                <i data-lucide="github"></i> Repository
-                            </a>
-                        </div>
+                        <i data-lucide="chevron-down" class="expand-icon"></i>
                     </div>
-
-                    <div class="project-deep-body">
-                        <div class="project-deep-diagram-container">
-                            <div class="diagram-overlay">
-                                <i data-lucide="zoom-in"></i>
-                                <span data-i18n="diag_zoom">클릭하여 다이어그램 확대</span>
+                    <div class="project-deep-details">
+                        <p><strong>Period:</strong> 2025.05.21 - 2025.05.23</p>
+                        <p><strong>Tech Stack:</strong> C, C++, POSIX Threads, Linux Sockets, WiringPi</p>
+                        <div class="psr-container">
+                            <div class="psr-block psr-problem">
+                                <h4>Problem</h4>
+                                <p>Need for a reliable, modular remote control system for hardware components over a network.</p>
                             </div>
-                            <!-- Inline SVG for NS-3 Simulation Architecture Flowchart -->
-                            <svg class="flowchart-svg" viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
-                                    </linearGradient>
-                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#0d9488;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
-                                    </linearGradient>
-                                    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-                                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
-                                    </filter>
-                                </defs>
-                                <rect width="500" height="240" fill="#f8fafc" rx="12" />
-                                
-                                <!-- Connection lines -->
-                                <path d="M120,70 L170,70" stroke="#cbd5e1" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="4,4" />
-                                <path d="M120,170 L170,170" stroke="#cbd5e1" stroke-width="2.5" />
-                                <path d="M270,70 L340,70" stroke="#cbd5e1" stroke-width="2.5" />
-                                <path d="M270,170 L340,170" stroke="#cbd5e1" stroke-width="2.5" />
-                                <path d="M220,105 L220,135" stroke="#cbd5e1" stroke-width="2.5" />
-                                <path d="M400,105 L400,135" stroke="#cbd5e1" stroke-width="2.5" />
-                                
-                                <!-- Nodes -->
-                                <rect x="20" y="45" width="100" height="50" rx="8" fill="url(#grad1)" filter="url(#shadow)" />
-                                <text x="70" y="75" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="11" text-anchor="middle">NS3 Core Engine</text>
-
-                                <rect x="20" y="145" width="100" height="50" rx="8" fill="url(#grad1)" filter="url(#shadow)" />
-                                <text x="70" y="175" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="11" text-anchor="middle">Network Node Topo</text>
-
-                                <rect x="170" y="45" width="100" height="50" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
-                                <text x="220" y="75" fill="#334155" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">Dynamic E-AODV</text>
-
-                                <rect x="170" y="135" width="100" height="50" rx="8" fill="url(#grad2)" filter="url(#shadow)" />
-                                <text x="220" y="165" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">SINR Channel Eval</text>
-
-                                <rect x="340" y="45" width="120" height="50" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)" />
-                                <text x="400" y="75" fill="#334155" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">Trace Packet Buff</text>
-
-                                <rect x="340" y="135" width="120" height="50" rx="8" fill="url(#grad2)" filter="url(#shadow)" />
-                                <text x="400" y="165" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">PyPlot Metric Vis</text>
-                            </svg>
-                        </div>
-
-                        <div class="project-deep-details">
-                            <div class="project-deep-tags">
-                                <span class="tag">C / C++</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">NS3 Engine</span>
-                                <span class="tag">AODV</span>
-                                <span class="tag">Wireless Routing</span>
-                                <span class="tag">Matplotlib</span>
+                            <div class="psr-block psr-solution">
+                                <h4>Solution</h4>
+                                <p>Developed a multi-threaded server-client system using POSIX threads and dynamic module loading.</p>
                             </div>
-
-                            <!-- Problem -> Solution -> Result Blocks -->
-                            <div class="psr-container">
-                                <div class="psr-block psr-problem">
-                                    <div class="psr-title-row">
-                                        <i data-lucide="alert-triangle" class="text-secondary"></i>
-                                        <h4 data-i18n="p1_prob_title">문제 상황 (Problem)</h4>
-                                    </div>
-                                    <p data-i18n="p1_prob_desc">노드 밀도 증가 및 이동성에 따른 무선 채널 간섭으로 패킷 손실률(Packet Loss Rate)이 급격히 증가하고 전송 신뢰도가 떨어지는 성능 저하 병목 현상이 발생했습니다.</p>
-                                </div>
-
-                                <div class="psr-block psr-solution">
-                                    <div class="psr-title-row">
-                                        <i data-lucide="check-circle" class="text-primary"></i>
-                                        <h4 data-i18n="p1_sol_title">해결 방안 (Solution)</h4>
-                                    </div>
-                                    <p data-i18n="p1_sol_desc">노드 잔여 에너지량 및 실시간 SINR 채널 품질 가중치를 계산하여 혼잡도가 낮고 전송 능력이 보장된 경로로 다중 경로 우회(Detour)하는 신규 알고리즘(E-AODV)을 직접 C++ 설계하여 NS-3에 탑재했습니다.</p>
-                                </div>
-
-                                <div class="psr-block psr-result">
-                                    <div class="psr-title-row">
-                                        <i data-lucide="trending-up" class="text-primary"></i>
-                                        <h4 data-i18n="p1_res_title">수행 결과 (Result)</h4>
-                                    </div>
-                                    <p data-i18n="p1_res_desc">네트워크 데이터 처리량(Throughput) 24% 향상, 패킷 전송 성공률(PDR) 15% 개선 및 전력 불균형 해소를 통한 개별 노드 전력 소모 가독 최적화로 전체 토폴로지 수명을 1.8배 개선했습니다.</p>
-                                </div>
-                            </div>
-
-                            <!-- Troubleshooting Callout -->
-                            <div class="trouble-box">
-                                <div class="trouble-header">
-                                    <i data-lucide="shield-alert"></i>
-                                    <span data-i18n="p1_trouble_title">기술적 난관 및 해결 과정 (Troubleshooting)</span>
-                                </div>
-                                <p class="trouble-desc" data-i18n="p1_trouble_desc">
-                                    <strong>메모리 릭 및 크래시:</strong> 100개 이상의 노드가 참여하는 장시간 대규모 시뮬레이션 시 패킷 포인터 해제 실패로 RAM 누수가 심화되며 약 12시간 실행 후 시뮬레이터가 갑자기 종료되는 현상 발생. Linux 환경에서 <strong>Valgrind(Memcheck)</strong> 프로파일링을 실행하여 C++ 스마트 포인터가 우회된 원형 버퍼 내 누수 트리거 지점을 정밀 포착. `std::shared_ptr` 스마트 포인터 도입 및 의존성 주입 시점 정리, 누수 버퍼의 명시적 `clear()` 메소드 추가 작업을 통해 120시간 연속 시뮬레이션에서도 메모리 점유율을 일정하게 유지하며 크래시 병목을 원천 해결함.
-                                </p>
+                            <div class="psr-block psr-result">
+                                <h4>Result</h4>
+                                <p>Successfully controlled distributed hardware via CLI with real-time feedback; thread-safe operations.</p>
                             </div>
                         </div>
+                        <a href="#" class="btn btn-outline btn-sm">GitHub Repository</a>
                     </div>
                 </div>
-
-                <!-- Deep-dive Project 2 -->
                 <div class="project-deep-card">
-                    <div class="project-deep-header">
+                    <div class="project-deep-header" onclick="this.parentElement.classList.toggle('active')">
                         <div class="project-deep-header-left">
-                            <h3 data-i18n="p2_title">고성능 리눅스 TCP/IP 원시 패킷 캡처 및 아키텍처 분석 시스템</h3>
-                            <p class="project-deep-sub" data-i18n="p2_summary">리눅스 네트워크 카드 커널 수준에서 들어오는 원시 소켓(Raw Socket) 데이터를 손실 없이 수집하고 실시간 패킷 헤더 정밀 파싱 처리를 담당하는 분산형 분석기 개발</p>
-                            <span class="project-deep-time" data-i18n="p2_duration_role">2024.04 - 2024.08 (시스템 개발 / 메인 아키텍트, 기여도 100%)</span>
+                            <h3>Blind Spot Accident Prevention System (BSAPS)</h3>
+                            <p>Real-time accident prevention system leveraging DMA and GPIO for efficient hardware data processing.</p>
                         </div>
-                        <div class="project-deep-header-right">
-                            <a href="https://github.com/gitgio99" target="_blank" class="btn btn-outline btn-sm">
-                                <i data-lucide="github"></i> Repository
-                            </a>
-                        </div>
+                        <i data-lucide="chevron-down" class="expand-icon"></i>
                     </div>
-
-                    <div class="project-deep-body">
-                        <div class="project-deep-diagram-container">
-                            <div class="diagram-overlay">
-                                <i data-lucide="zoom-in"></i>
-                                <span data-i18n="diag_zoom">클릭하여 다이어그램 확대</span>
+                    <div class="project-deep-details">
+                        <p><strong>Period:</strong> Placeholder Timeline</p>
+                        <p><strong>Tech Stack:</strong> C, Linux, DMA, GPIO</p>
+                        <div class="psr-container">
+                            <div class="psr-block psr-problem">
+                                <h4>Problem</h4>
+                                <p>Bottlenecks in processing high-frequency sensor data on embedded platforms causing latency.</p>
                             </div>
-                            <!-- Inline SVG for Network Capturer Architecture -->
-                            <svg class="flowchart-svg" viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#0d9488;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
-                                    </linearGradient>
-                                    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ea580c;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#eab308;stop-opacity:1" />
-                                    </linearGradient>
-                                    <filter id="shadow2" x="-10%" y="-10%" width="120%" height="120%">
-                                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
-                                    </filter>
-                                </defs>
-                                <rect width="500" height="240" fill="#f8fafc" rx="12" />
-                                
-                                <!-- Connection lines -->
-                                <path d="M120,70 L170,70" stroke="#cbd5e1" stroke-width="2.5" />
-                                <path d="M270,70 L340,70" stroke="#cbd5e1" stroke-width="2.5" />
-                                <path d="M400,105 L400,135" stroke="#cbd5e1" stroke-width="2.5" />
-                                <path d="M340,160 L270,160" stroke="#cbd5e1" stroke-width="2.5" />
-                                <path d="M170,160 L120,160" stroke="#cbd5e1" stroke-width="2.5" />
-                                
-                                <!-- Nodes -->
-                                <rect x="20" y="45" width="100" height="50" rx="8" fill="url(#grad3)" filter="url(#shadow2)" />
-                                <text x="70" y="75" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="11" text-anchor="middle">Network Packet</text>
-
-                                <rect x="170" y="45" width="100" height="50" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow2)" />
-                                <text x="220" y="75" fill="#334155" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">Linux Raw Socket</text>
-
-                                <rect x="340" y="45" width="120" height="50" rx="8" fill="url(#grad3)" filter="url(#shadow2)" />
-                                <text x="400" y="75" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">Lock-Free RingBuff</text>
-
-                                <rect x="340" y="135" width="120" height="50" rx="8" fill="url(#grad4)" filter="url(#shadow2)" />
-                                <text x="400" y="165" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">Multithread Parser</text>
-
-                                <rect x="170" y="135" width="100" height="50" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow2)" />
-                                <text x="220" y="165" fill="#334155" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">Packet Analytics</text>
-
-                                <rect x="20" y="135" width="100" height="50" rx="8" fill="url(#grad4)" filter="url(#shadow2)" />
-                                <text x="70" y="165" fill="#ffffff" font-family="'Inter', sans-serif" font-weight="bold" font-size="10" text-anchor="middle">PCAP Wireshark</text>
-                            </svg>
-                        </div>
-
-                        <div class="project-deep-details">
-                            <div class="project-deep-tags">
-                                <span class="tag">C / C++</span>
-                                <span class="tag">Linux socket API</span>
-                                <span class="tag">POSIX threads</span>
-                                <span class="tag">Lock-free Circular Buffer</span>
-                                <span class="tag">TCP/IP Parse</span>
-                                <span class="tag">PCAP format</span>
+                            <div class="psr-block psr-solution">
+                                <h4>Solution</h4>
+                                <p>Migrated from direct GPIO polling to DMA (Direct Memory Access) for efficient data transfer.</p>
                             </div>
-
-                            <!-- Problem -> Solution -> Result Blocks -->
-                            <div class="psr-container">
-                                <div class="psr-block psr-problem">
-                                    <div class="psr-title-row">
-                                        <i data-lucide="alert-triangle" class="text-secondary"></i>
-                                        <h4 data-i18n="p2_prob_title">문제 상황 (Problem)</h4>
-                                    </div>
-                                    <p data-i18n="p2_prob_desc">기가비트 이더넷 급 단일 버퍼 수신 환경에서 패킷 유입량이 초당 10만 개(100k pps) 수준으로 급증하자 파싱 처리 속도 지연으로 OS 소켓 링버퍼 오버플로우 및 패킷 유실 발생.</p>
-                                </div>
-
-                                <div class="psr-block psr-solution">
-                                    <div class="psr-title-row">
-                                        <i data-lucide="check-circle" class="text-primary"></i>
-                                        <h4 data-i18n="p2_sol_title">해결 방안 (Solution)</h4>
-                                    </div>
-                                    <p data-i18n="p2_sol_desc">패킷 수신(I/O 스레드)과 패킷 파싱(워커 스레드)을 완전히 분리하는 고속 무잠금 원형 큐(Lock-free Circular Queue) 동기화 아키텍처 및 POSIX 스레드 풀(Thread Pool) 최적화 도입.</p>
-                                </div>
-
-                                <div class="psr-block psr-result">
-                                    <div class="psr-title-row">
-                                        <i data-lucide="trending-up" class="text-primary"></i>
-                                        <h4 data-i18n="p2_res_title">수행 결과 (Result)</h4>
-                                    </div>
-                                    <p data-i18n="p2_res_desc">극한의 트래픽 환경에서도 무손실 실시간 패킷 수집률 100% (유실률 0.00%) 달성, 기가비트 환경 대비 CPU 메모리 자원 소모율 18% 절감 및 실시간 PCAP 규격 연동 성공.</p>
-                                </div>
-                            </div>
-
-                            <!-- Troubleshooting Callout -->
-                            <div class="trouble-box">
-                                <div class="trouble-header">
-                                    <i data-lucide="shield-alert"></i>
-                                    <span data-i18n="p2_trouble_title">기술적 난관 및 해결 과정 (Troubleshooting)</span>
-                                </div>
-                                <p class="trouble-desc" data-i18n="p2_trouble_desc">
-                                    <strong>스레드 동기화 락 경합 병목:</strong> 멀티 스레드가 큐의 쓰기/읽기 인덱스 포인터에 동시다발적으로 쓰기를 시도하면서 뮤텍스 락(Mutex Lock) 점유 대기 시간이 누적되어 속도가 크게 떨어지는 병목 현상 발생. C++11의 `std::atomic` 라이브러리를 사용해 <strong>CAS (Compare-And-Swap)</strong> 연산 기반의 무잠금(Lock-free) 프로듀서-컨슈머 링버퍼 알고리즘으로 전면 리팩토링 진행. 결과적으로 임계 구역 락 대기 오버헤드를 완전히 제거함으로써 단일 코어 패킷 유입 한계를 기존 대비 420% 이상 끌어올리는 극적인 하드웨어 성능 개선 달성.
-                                </p>
+                            <div class="psr-block psr-result">
+                                <h4>Result</h4>
+                                <p>Minimized CPU utilization and significantly improved system responsiveness.</p>
                             </div>
                         </div>
+                        <a href="#" class="btn btn-outline btn-sm">GitHub Repository</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag" data-i18n="contact_tag">Let's Talk</span>
-                <h2 class="section-title" data-i18n="contact_title">연락처 및 제안</h2>
+                <span class="section-tag">Let's Talk</span>
+                <h2 class="section-title">Contact</h2>
                 <div class="section-line"></div>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3 data-i18n="contact_info_title">새로운 기회를 기다리고 있습니다</h3>
-                    <p data-i18n="contact_info_desc">
-                        함께 일하고 성장할 수 있는 팀을 찾고 있습니다. 프로젝트 문의, 기술적 질문, 혹은 그 외 가벼운 커피챗 제안 모두 환영합니다.
-                    </p>
-                    
-                    <div class="contact-methods">
-                        <div class="method-item">
-                            <div class="method-icon">
-                                <i data-lucide="mail"></i>
-                            </div>
-                            <div>
-                                <h4 data-i18n="contact_email_label">이메일</h4>
-                                <p>gildong@example.com</p>
-                            </div>
-                        </div>
-                        <div class="method-item">
-                            <div class="method-icon">
-                                <i data-lucide="github"></i>
-                            </div>
-                            <div>
-                                <h4 data-i18n="contact_github_label">깃허브</h4>
-                                <p><a href="https://github.com/gitgio99" target="_blank">github.com/gitgio99</a></p>
-                            </div>
-                        </div>
-                        <div class="method-item">
-                            <div class="method-icon">
-                                <i data-lucide="linkedin"></i>
-                            </div>
-                            <div>
-                                <h4 data-i18n="contact_linkedin_label">링크드인</h4>
-                                <p><a href="https://linkedin.com" target="_blank">linkedin.com/in/gildong</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <label for="name" data-i18n="form_name_label">성함</label>
-                            <input type="text" id="name" name="name" required data-i18n-placeholder="form_name_placeholder" placeholder="홍길동">
-                        </div>
-                        <div class="form-group">
-                            <label for="email" data-i18n="form_email_label">이메일 주소</label>
-                            <input type="email" id="email" name="email" required data-i18n-placeholder="form_email_placeholder" placeholder="you@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="message" data-i18n="form_msg_label">메시지</label>
-                            <textarea id="message" name="message" rows="5" required data-i18n-placeholder="form_msg_placeholder" placeholder="제안하실 내용을 적어주세요..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">
-                            <span data-i18n="form_submit_btn">메시지 전송하기</span> <i data-lucide="send"></i>
-                        </button>
-                    </form>
-                    <div id="form-success" class="form-success-msg hidden">
-                        <i data-lucide="check-circle" class="success-icon"></i>
-                        <h4 data-i18n="form_success_title">메시지가 정상적으로 전송되었습니다!</h4>
-                        <p data-i18n="form_success_desc">빠른 시일 내에 기재해주신 이메일로 답변드리겠습니다. 감사합니다.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">
-            <p class="copyright" data-i18n="footer_copyright">&copy; 2026 Hong Gildong. All rights reserved.</p>
-            <div class="footer-socials">
-                <a href="https://github.com/gitgio99" class="social-link" target="_blank" aria-label="Github"><i data-lucide="github"></i></a>
-                <a href="#" class="social-link" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
-                <a href="#" class="social-link" aria-label="Mail"><i data-lucide="mail"></i></a>
-            </div>
+            <p class="copyright">&copy; 2026 Gildong Hong. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Fullscreen Diagram Zoom Modal -->
-    <div id="diagram-modal" class="modal">
-        <button class="modal-close" id="modal-close" aria-label="닫기">&times;</button>
-        <div class="modal-content" id="modal-content">
-            <!-- Dynamically cloned SVG diagram goes here -->
-        </div>
-        <div class="modal-caption" data-i18n="modal_caption">클릭하면 원래 크기로 축소됩니다.</div>
-    </div>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scroll-to-top-btn" aria-label="맨 위로 이동">
-        <i data-lucide="arrow-up"></i>
-    </button>
-
     <script>
-        // Initialize Lucide icons
         lucide.createIcons();
     </script>
     <script src="main.js"></script>
