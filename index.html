@@ -19,6 +19,7 @@
                 <a href="#about" class="nav-link">About</a>
                 <a href="#competencies" class="nav-link">Competencies</a>
                 <a href="#experience" class="nav-link">Experience</a>
+                <a href="#education" class="nav-link">Education</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
@@ -146,8 +147,7 @@
                         </div>
                     </div>
                 </div>
-                    </div>
-                </div>
+  
             </div>
         </div>
     </section>
@@ -192,36 +192,62 @@
                     </div>
                 </div>
 
-            <!-- Timeline Item 2 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">2025.03 - 2025.08</div>
-                <div class="timeline-content">
-                    <h3 data-i18n="exp2_company">Vision's Edge Device Academy</h3>
-                    <p class="role" data-i18n="exp2_role">Embedded Systems Engineering Course Graduate</p>
-                    <ul class="task-list">
-                        <li data-i18n="exp2_task1">Acquired foundational edge device technologies, focusing on ARM architectures, cache optimization, Buildroot, and Yocto.</li>
-                        <li data-i18n="exp2_task2">Gained deep understanding of embedded Linux systems, including low-level system, shell, and network programming.</li>
-                        <li data-i18n="exp2_task3">Mastered Linux device drivers, kernel services, device models, and virtual file systems (VFS).</li>
-                    </ul>
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024.03 - 2024.12</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="exp3_company">Communication Systems Lab</h3>
+                        <p class="role" data-i18n="exp3_role">Undergraduate Student Researcher</p>
+                        <ul class="task-list">
+                            <li data-i18n="exp3_project">Project: LiDAR & Multi-view Camera Sensor Fusion Anomaly Detection</li>
+                            <li data-i18n="exp3_task1">Constructed a 5-channel fused dataset (RGB + Intensity + Depth) by calibrating and mapping KITTI image and LiDAR point cloud data.</li>
+                            <li data-i18n="exp3_task2">Automated spoofing data generation by manipulating point clouds (copy, translate, delete) at the bounding-box object level across specific frames.</li>
+                            <li data-i18n="exp3_task3">Built training datasets for anomaly detection models by synchronizing multi-view camera images with LiDAR point clouds, incorporating visualization and transformation of large-scale datasets (KITTI, nuScenes).</li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="education" class="education">
+       <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Academic & Training</span>
+                <h2 class="section-title">Education & Courses</h2>
+                <div class="section-line"></div>
             </div>
 
-            <!-- Timeline Item 3 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">2024.03 - 2024.12</div>
-                <div class="timeline-content">
-                    <h3 data-i18n="exp3_company">Communication Systems Lab</h3>
-                    <p class="role" data-i18n="exp3_role">Undergraduate Student Researcher</p>
-                    <ul class="task-list">
-                        <li data-i18n="exp3_project">Project: LiDAR & Multi-view Camera Sensor Fusion Anomaly Detection</li>
-                        <li data-i18n="exp3_task1">Constructed a 5-channel fused dataset (RGB + Intensity + Depth) by calibrating and mapping KITTI image and LiDAR point cloud data.</li>
-                        <li data-i18n="exp3_task2">Automated spoofing data generation by manipulating point clouds (copy, translate, delete) at the bounding-box object level across specific frames.</li>
-                        <li data-i18n="exp3_task3">Built training datasets for anomaly detection models by synchronizing multi-view camera images with LiDAR point clouds, incorporating visualization and transformation of large-scale datasets (KITTI, nuScenes).</li>
-                    </ul>
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025.03 - 2025.08</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="exp2_company">Vision's Edge Device Academy</h3>
+                        <p class="role" data-i18n="exp2_role">Embedded Systems Engineering Course Graduate</p>
+                        <ul class="task-list">
+                            <li data-i18n="exp2_task1">Acquired foundational edge device technologies, focusing on ARM architectures, cache optimization, Buildroot, and Yocto.</li>
+                            <li data-i18n="exp2_task2">Gained deep understanding of embedded Linux systems, including low-level system, shell, and network programming.</li>
+                            <li data-i18n="exp2_task3">Mastered Linux device drivers, kernel services, device models, and virtual file systems (VFS).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2018.03 - 2025.02</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="edu2_institution">Kangwon National University (Chuncheon)</h3>
+                        <p class="role" data-i18n="edu2_major">B.S. in Electrical and Electronics Engineering (Graduated)</p>
+                    </div>
                 </div>
             </div>
+        </div>
 
     </section>
 
@@ -234,15 +260,14 @@
             </div>
 
             <div class="projects-deep-list">
-
-                <!-- Project 1: TCP-based Remote Device Control System -->
+                <!-- Project 1: Weather Distortion Evaluation & Vision AI Robustness -->
                 <div class="project-deep-card">
                     <!-- Header (Click to Toggle) -->
                     <div class="project-deep-header">
                         <div class="project-deep-header-left">
-                            <h3>TCP-based Remote Device Control System</h3>
-                            <p class="project-deep-sub">Server-client architecture for remote hardware control using Raspberry Pi 4, POSIX threads, and shared libraries.</p>
-                            <span class="project-deep-time">2025.05.21 - 2025.05.23 (Lead Embedded Developer)</span>
+                            <h3>Object Detection Performance Evaluation in Weather Conditions Using CarMaker</h3>
+                            <p class="project-deep-sub">Automated synthetic dataset collection and YOLOv8m robustness evaluation under adverse weather conditions using CarMaker RSDA API and CUDA nvJPEG acceleration.</p>
+                            <span class="project-deep-time">2026.01 - 2026.02</span>
                         </div>
                         <div class="project-deep-header-right">
                             <i data-lucide="chevron-down" class="expand-icon"></i>
@@ -258,8 +283,8 @@
                                 <i data-lucide="zoom-in"></i>
                                 <span>Click to Expand Diagram</span>
                             </div>
-                            <!-- 상대 경로 지정된 외부 SVG (프로젝트 경로에 맞게 파일명 변경) -->
-                            <img src="./assets/images/TCP_Control_Architecture.svg" alt="TCP Remote Control Architecture" class="project-diagram-img diagram-img" />
+                            <!-- Relative path to architecture/pipeline diagram -->
+                            <img src="./assets/images/CarMaker_project_pipeline.svg" alt="CarMaker Data Automation and YOLO Fine-Tuning Pipeline" class="project-diagram-img diagram-img" />
                         </div>
 
                         <!-- Key Challenges & Problem-Solving (PSR Structure) -->
@@ -268,9 +293,11 @@
                             <div class="psr-block psr-contributions">
                                 <h4>Key Contributions</h4>
                                 <ul class="bullet-list">
-                                    <li>Designed Linux C socket communication layer supporting custom binary protocols.</li>
-                                    <li>Implemented modular hardware control drivers via shared library interfaces (`.so`).</li>
-                                    <li>Developed thread-safe queue management and a real-time status monitoring CLI.</li>
+                                    <li>Parameterized adverse weather variables (Sun, Cloud, Rain, Snow, Fog) across 2 driving tracks to construct 4 distinct scenario datasets totaling 6,228 synthetic frames.</li>
+                                    <li>Developed a high-speed GPU image capture plugin (`JpegEncoder.cu`) binding Movie NX RSDA API with CUDA `nvjpeg` library for real-time 1280x800 JPEG compression.</li>
+                                    <li>Built a C++ Ground Truth Auto-Labeling pipeline (`GTLabelWriter.cpp`) using 3D-to-2D pinhole camera projection to generate pixel-accurate 2D YOLO annotations.</li>
+                                    <li>Designed an absolute simulation time indexing algorithm based on `SimCore.Time` to eliminate timing offsets between physics updates and image capture routines.</li>
+                                    <li>Executed YOLOv8m fine-tuning and conducted comprehensive quantitative (mAP@0.5, PR Curve, Confusion Matrix) and qualitative evaluations against pretrained baselines.</li>
                                 </ul>
                             </div>
 
@@ -278,9 +305,10 @@
                             <div class="psr-block psr-growth">
                                 <h4>Engineering Growth & Learnings</h4>
                                 <ul class="bullet-list">
-                                    <li>Mastered Linux thread synchronization, deadlock prevention, and race condition debugging.</li>
-                                    <li>Learned the architectural benefits of dynamic module loading for system scalability.</li>
-                                    <li>Gained deep proficiency in low-level byte stream parsing and TCP/IP stack behavior.</li>
+                                    <li>Mastered 3D-to-2D pinhole camera projection geometry, transformation matrices from CarMaker Sensor Frame (FrS) to pixel space, and normalized AABB calculations.</li>
+                                    <li>Gained hands-on experience with CUDA memory management (`cudaMalloc`, `cudaMemcpy`) and `nvjpeg` parameter tuning to prevent I/O bottlenecks during high-throughput vision data logging.</li>
+                                    <li>Enhanced problem-solving skills regarding simulation lifecycles, real-time physics engines, and absolute timestamp synchronization.</li>
+                                    <li>Acquired deep expertise in quantitatively evaluating autonomous vision AI performance degradation under adverse weather conditions (rain, snow, fog).</li>
                                 </ul>
                             </div>
 
@@ -288,10 +316,9 @@
                             <div class="psr-block psr-problem">
                                 <h4>Problem Setting & Solution</h4>
                                 <ul class="bullet-list">
-                                    <li><strong>Network Latency:</strong> Simultaneous commands caused socket blocking and thread stalls.</li>
-                                    <li><strong>Race Conditions:</strong> Concurrent hardware access led to unpredictable state corruption.</li>
-                                    <li><strong>Dynamic Scalability:</strong> Needed a way to add hardware features without core server reboots.</li>
-                                    <li><strong>Protocol Overhead:</strong> Developed a lightweight binary protocol to minimize MCU-to-Server traffic.</li>
+                                    <li><strong>Manual Annotation Bottlenecks:</strong> Replaced manual labeling (~1,800 frames) with a C++ GT Auto-Labeling pipeline inside `User_Calc` to achieve 100% automated, pixel-accurate 2D annotations.</li>
+                                    <li><strong>Simulation I/O Latency:</strong> Bound Movie NX RSDA API with CUDA `nvjpeg` to compress RGB buffers directly in GPU memory before disk saving, mitigating CPU overhead and simulation lag.</li>
+                                    <li><strong>Label-Image Frame Offset:</strong> Resolved a non-detection bug (1.00 Background Miss on Traffic Lights) by implementing absolute time indexing (`elapsed / 0.060`) with a -1 frame offset correction.
                                 </ul>
                             </div>
 
@@ -299,20 +326,12 @@
                             <div class="psr-block psr-metrics">
                                 <h4>Key Results & Metrics</h4>
                                 <ul class="bullet-list">
-                                    <li><strong>0% Data Corruption:</strong> Achieved perfect reliability during high-concurrency stress tests.</li>
-                                    <li><strong>Zero Downtime:</strong> Enabled hot-swapping of hardware modules using dynamic loading.</li>
-                                    <li><strong>Sub-ms Latency:</strong> Optimized command propagation for real-time responsiveness.</li>
+                                    <li><strong>100% Data Automation:</strong> Automated the E2E synthetic data collection pipeline, generating 6,228 high-resolution image-label pairs across 4 weather scenarios.</li>
+                                    <li><strong>88% Accuracy Restored:</strong> Restored traffic light detection accuracy from 0% to 88% by correcting the physical update-to-capture timing offset.</li>
+                                    <li><strong>mAP@0.5 = 0.583:</strong> Achieved strong fine-tuned YOLOv8m performance across all classes (`car`: 0.892, `truck`: 0.696, `person`: 0.686) while eliminating false positives from falling snow.</li>
                                 </ul>
                             </div>
-                        </div>
-
-                        <!-- Footer / External Links -->
-                        <div class="project-deep-footer">
-                            <a href="https://github.com/gitgio99" target="_blank" class="btn btn-outline btn-sm">
-                                <i data-lucide="github"></i> GitHub Repository
-                            </a>
-                        </div>
-
+                        </div> 
                     </div>
                 </div>
 
@@ -322,8 +341,8 @@
                     <div class="project-deep-header">
                         <div class="project-deep-header-left">
                             <h3>Blind Spot Accident Prevention System (BSAPS)</h3>
-                            <p class="project-deep-sub">Real-time accident prevention system leveraging DMA and GPIO for efficient hardware data processing</p>
-                            <span class="project-deep-time">2024.03 - 2024.06 (Lead Embedded Developer)</span>
+                            <p class="project-deep-sub">Real-time Alert System for Blind Spots: Implemented immediate warning signal control logic using the STM32 board to prevent accidents on narrow blind-spot roads.</p>
+                            <span class="project-deep-time">2025.06 - 2025.08 (Lead Embedded Developer / STM32 Nucleo-F401RE Control & Signal Processing)</span>
                         </div>
                         <div class="project-deep-header-right">
                             <i data-lucide="chevron-down" class="expand-icon"></i>
@@ -349,9 +368,10 @@
                             <div class="psr-block psr-contributions">
                                 <h4>Key Contributions</h4>
                                 <ul class="bullet-list">
-                                    <li>Configured Linux kernel-level GPIO interrupts and DMA stream handlers.</li>
-                                    <li>Engineered custom C drivers for multi-sensor integration via UART/SPI protocols.</li>
-                                    <li>Optimized memory buffer management to resolve high-frequency sensor stalls.</li>
+                                    <li>Designed and implemented a high-performance hardware-accelerated rendering engine using TIM1 synchronization and DMA2 transfers.</li>
+                                    <li>Engineered a double-buffering scheme (LED_MEM0, LED_MEM1) with VSYNC interrupt flags (led_dma_take_vsync) to eliminate screen tearing.</li>
+                                    <li>Built an offline BSRR word-stream pre-compiler (build_from_pixel_fn) to package RGB bitplanes, CLK, LAT, and OE signals into pre-computed 32-bit DMA command streams.</li>
+                                    <li>Restructured hardware architecture by remapping all control/data lines to a single GPIO port (GPIOB) to satisfy single-address DMA register constraints.</li>
                                 </ul>
                             </div>
 
@@ -359,9 +379,9 @@
                             <div class="psr-block psr-growth">
                                 <h4>Engineering Growth & Learnings</h4>
                                 <ul class="bullet-list">
-                                    <li>Mastered low-level memory management (DMA, Interrupt Priorities) in embedded systems.</li>
-                                    <li>Practical expertise in Linux device drivers and kernel-level concurrency control.</li>
-                                    <li>Proficiency in hardware-software boundary debugging using professional diagnostic tools.</li>
+                                    <li>Gained deep expertise in microcontroller peripheral synchronization (DMA, TIM1, GPIO BSRR registers) and asynchronous interrupt-driven architectures.</li>
+                                    <li>Mastered memory vs. execution trade-off management when transitioning from CPU-driven bit-banging to memory-heavy pre-compiled command buffers.</li>
+                                    <li>Learned advanced temporal color modulation techniques, including 5-bit color bitplane decomposition and gamma correction mapping.</li>
                                 </ul>
                             </div>
 
@@ -369,10 +389,10 @@
                             <div class="psr-block psr-problem">
                                 <h4>Problem Setting & Solution</h4>
                                 <ul class="bullet-list">
-                                    <li><strong>CPU Saturation:</strong> High-frequency ultrasonic sensor polling consumed >75% of CPU cycles.</li>
-                                    <li><strong>Warning Delay:</strong> Latency in blind-spot detection posed critical safety risks.</li>
-                                    <li><strong>DMA Offloading:</strong> Migrated data transfer tasks to DMA to free the main CPU.</li>
-                                    <li><strong>Synchronization Stalls:</strong> Implemented Circular Ring Buffers to prevent pipeline locks.</li>
+                                    <li><strong>Single-Port Register Constraint:</strong> Resolved multiline GPIO port distribution by re-wiring all HUB75 pins (Address A–D, RGB1/2, CLK, LAT, OE) to GPIOB so DMA could execute single-address transfers directly to the GPIOB BSRR register.</li>
+                                    <li><strong>CPU Overhead Bottleneck:</strong> Shifted rendering paradigm from runtime pixel polling to pre-building 32-bit control word streams (fb0, fb1), completely offloading the display refresh rate workload from the CPU to DMA2.</li>
+                                    <li><strong>Display Tearing & Synchronization:</strong> Implemented non-blocking double-buffering using HAL_DMAEx_MultiBufferStart_IT combined with an asynchronous main loop event check (led_dma_is_mem_free) to prevent writing during active DMA transfers.</li>
+                                    <li><strong>Temporal Brightness Control:</strong> Developed a 5-bit depth bitplane splitting algorithm (u8_to_plane, cw_from_bits) paired with TIM1 timing intervals to maintain steady gray-scale rendering without flicker.</li>
                                 </ul>
                             </div>
 
@@ -380,22 +400,105 @@
                             <div class="psr-block psr-metrics">
                                 <h4>Key Results & Metrics</h4>
                                 <ul class="bullet-list">
-                                    <li><strong>85% CPU Reduction:</strong> Decreased CPU load from 78% to under 12%.</li>
-                                    <li><strong>&lt;15ms Response:</strong> Guaranteed real-time warning triggers for enhanced driver safety.</li>
-                                    <li><strong>High-Speed Stability:</strong> Validated detection reliability at speeds up to 80km/h.</li>
+                                    <li><strong>0% CPU Utilization</strong> for display refresh operations, leaving CPU fully available for RTC time processing and real-time animations.</li>
+                                    <li><strong>Flicker-Free Performance</strong> Stable frame rate delivered via DMA-driven BSRR streaming synced to TIM1.</li>
+                                    <li><strong>100% Tearing Elimination:</strong> Completely smooth buffer swapping achieved through VSYNC-aligned asynchronous double buffering.</li>
                                 </ul>
                             </div>
                         </div>
 
                         <!-- Footer / External Links -->
                         <div class="project-deep-footer">
-                            <a href="https://github.com/gitgio99" target="_blank" class="btn btn-outline btn-sm">
+                            <a href="https://github.com/gitgio99/stm-32" target="_blank" class="btn btn-outline btn-sm">
                                 <i data-lucide="github"></i> GitHub Repository
                             </a>
                         </div>
 
                     </div>
                 </div>
+                
+
+                <!-- Project 3: TCP-based Remote Device Control System -->
+                <div class="project-deep-card">
+                    <!-- Header (Click to Toggle) -->
+                    <div class="project-deep-header">
+                        <div class="project-deep-header-left">
+                            <h3>TCP-based Remote Device Control System</h3>
+                            <p class="project-deep-sub">Multi-threaded server-client architecture for remote hardware control using Raspberry Pi 4, POSIX threads, daemon processes, and dynamic shared libraries (.so).</p>
+                            <span class="project-deep-time">2025.05.21 - 2025.05.23 (Lead Embedded Developer)</span>
+                        </div>
+                        <div class="project-deep-header-right">
+                            <i data-lucide="chevron-down" class="expand-icon"></i>
+                        </div>
+                    </div>
+
+                    <!-- Toggle Details Body -->
+                <div class="project-deep-details">
+                    
+                    <!-- Diagram Image Container -->
+                    <div class="project-deep-diagram-container">
+                        <div class="diagram-overlay">
+                            <i data-lucide="zoom-in"></i>
+                            <span>Click to Expand Diagram</span>
+                        </div>
+                        <!-- Relative path to architecture diagram -->
+                        <!-- <img src="./assets/images/TCP_Control_Architecture.svg" alt="TCP Remote Control Architecture" class="project-diagram-img diagram-img" /> -->
+                    </div>
+
+                    <!-- Key Challenges & Problem-Solving (PSR Structure) -->
+                    <div class="psr-container">
+                        <!-- 1. Key Contributions -->
+                        <div class="psr-block psr-contributions">
+                            <h4>Key Contributions</h4>
+                            <ul class="bullet-list">
+                                <li>Built a multi-threaded Linux C socket server architecture using `pthread_create()` and `pthread_detach()` for asynchronous, concurrent client command processing[cite: 10, 11].</li>
+                                <li>Implemented a plugin-based hardware control driver layer via dynamic shared libraries (`.so`) loaded at runtime using `dlopen()` and `dlsym()`[cite: 10, 11].</li>
+                                <li>Designed multi-level LED brightness control (`softPwm`) and music playback engine (`softTone`) integrated with CDS light sensors and 7-segment displays[cite: 10, 11, 13, 15, 17].</li>
+                                <li>Architected a robust Linux background daemon process featuring double `fork()`, `setsid()`, log redirection (`dup2`), and clean `SIGINT` signal handling[cite: 10, 11].</li>
+                            </ul>
+                        </div>
+
+                        <!-- 2. Engineering Growth & Learnings -->
+                        <div class="psr-block psr-growth">
+                            <h4>Engineering Growth & Learnings</h4>
+                            <ul class="bullet-list">
+                                <li>Mastered Linux daemonization mechanics, process group session isolation (`setsid`), and standard stream redirection for background logging[cite: 10].</li>
+                                <li>Deepened understanding of C shared library runtime symbol resolving, function pointer casting, and dynamic memory safety (`dlclose`)[cite: 10].</li>
+                                <li>Acquired expertise in line-buffered I/O streams (`_IOLBF`) and thread-safe file descriptor management across fork boundaries[cite: 10].</li>
+                                <li>Gained practical knowledge in software PWM timing constraints and the impact of repeated GPIO initialization on kernel/library state[cite: 10, 14, 17].</li>
+                            </ul>
+                        </div>
+
+                        <!-- 3. Problem Setting & Solution -->
+                        <div class="psr-block psr-problem">
+                            <h4>Problem Setting & Solution</h4>
+                            <ul class="bullet-list">
+                                <li><strong>Daemon Log Interception Loss:</strong> Standard I/O streams were lost post-`daemonize()`; resolved by redirecting `STDOUT` and `STDERR` to `server.log` using `dup2()` with line-buffering[cite: 10].</li>
+                                <li><strong>PWM Timer Segment Failure:</strong> Repeated `wiringPiSetupGpio()` calls inside dynamically loaded modules crashed SoftPWM; fixed by centralizing setup to a single startup call (`device_init()`)[cite: 10, 14, 17].</li>
+                                <li><strong>Port Rebind Failures on Shutdown:</strong> Abrupt daemon terminations caused socket port locks; solved by registering a `SIGINT` handler to explicitly `close(server_fd)`[cite: 10].</li>
+                            </ul>
+                        </div>
+
+                        <!-- 4. Key Results & Metrics -->
+                        <div class="psr-block psr-metrics">
+                            <h4>Key Results & Metrics</h4>
+                            <ul class="bullet-list">
+                                <li><strong>0% Command Corruption:</strong> Achieved flawless execution across concurrent client commands through thread-safe socket dispatching[cite: 10, 11].</li>
+                                <li><strong>Zero Downtime Upgrades:</strong> Enabled real-time hot-swapping and addition of hardware control modules without restarting the core TCP server[cite: 10, 11].</li>
+                                <li><strong>Sub-ms Command Responsiveness:</strong> Delivered real-time sub-millisecond control across 4-level LED PWM, melody playback, and sensor monitoring[cite: 10, 11, 17].</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Footer / External Links -->
+                    <div class="project-deep-footer">
+                        <a href="https://github.com/gitgio99/TCP_module_control" target="_blank" class="btn btn-outline btn-sm">
+                            <i data-lucide="github"></i> GitHub Repository
+                        </a>
+                    </div> 
+                </div>
+            </div>
+
 
             </div>
         </div>
@@ -408,12 +511,65 @@
                 <h2 class="section-title">Contact</h2>
                 <div class="section-line"></div>
             </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info Box -->
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>
+                        I am open to opportunities in Embedded Systems, Real-Time Control, and Firmware Engineering. 
+                        Feel free to reach out to me!
+                    </p>
+
+                    <div class="contact-details">
+                        <!-- Email -->
+                        <a href="mailto:wldh0026@gmail.com" class="contact-item">
+                            <div class="contact-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">wldh0026@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <!-- Location -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Seoul, South Korea</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- External Links & Actions -->
+                    <div class="contact-links">
+                        <!-- GitHub -->
+                        <a href="https://github.com/gitgio99" target="_blank" class="btn btn-outline btn-sm">
+                            <i data-lucide="github"></i> GitHub
+                        </a>
+                        
+                        <!-- LinkedIn (계정이 있다면 링크 주소 입력) -->
+                        <a href="https://www.linkedin.com/in/jioh-jeon-58a368362" target="_blank" class="btn btn-outline btn-sm">
+                            <i data-lucide="linkedin"></i> LinkedIn
+                        </a>
+
+                        <!-- Resume Download (PDF 파일이 asset 폴더에 있을 경우) -->
+                        <a href="./assets/Jioh_Jeon_Resume.pdf" download class="btn btn-primary btn-sm">
+                            <i data-lucide="download"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container footer-container">
-            <p class="copyright">&copy; 2026 Gildong Hong. All rights reserved.</p>
+            <p class="copyright">&copy; 2026 Jioh Jeon. All rights reserved.</p>
         </div>
     </footer>
 
