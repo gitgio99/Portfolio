@@ -1,28 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
-    // 1. Theme Toggle Logic
-    // ==========================================================================
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const applyTheme = (theme) => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-        
-        // Toggle icon
-        const icon = themeToggleBtn.querySelector('i');
-        icon.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
-        lucide.createIcons();
-    };
-
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    applyTheme(savedTheme);
-
-    themeToggleBtn.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
-    });
-
-    // ==========================================================================
-    // 2. Navigation Header Scroll Effect
+    // 1. Navigation Header Scroll Effect
     // ==========================================================================
     const navbar = document.querySelector('.navbar');
     
@@ -35,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================================================
-    // 3. Mobile Menu Toggle
+    // 2. Mobile Menu Toggle
     // ==========================================================================
     const mobileToggle = document.getElementById('mobile-toggle');
     const navMenu = document.getElementById('nav-menu');
@@ -65,26 +43,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // 4. Click to Enlarge Diagram Modal
+    // 3. Project Accordion Toggle Logic
+    // ==========================================================================
+    const projectHeaders = document.querySelectorAll('.project-deep-header');
+    
+    projectHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const card = header.parentElement;
+            card.classList.toggle('active');
+        });
+    });
+
+    // ==========================================================================
+    // 4. Click to Enlarge Diagram Modal (Lightbox)
     // ==========================================================================
     const diagrams = document.querySelectorAll('.project-deep-diagram-container');
-    const modal = document.getElementById('diagram-modal');
-    const modalContent = document.getElementById('modal-content');
-    const modalClose = document.getElementById('modal-close');
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const modalClose = document.getElementById('modalClose');
 
-    if (diagrams && modal && modalContent) {
+    if (diagrams && modal && modalImage) {
         diagrams.forEach(diagram => {
-            diagram.addEventListener('click', () => {
-                const originalSvg = diagram.querySelector('svg');
-                if (originalSvg) {
-                    const clonedSvg = originalSvg.cloneNode(true);
-                    clonedSvg.removeAttribute('viewBox');
-                    clonedSvg.setAttribute('width', '100%');
-                    clonedSvg.setAttribute('height', 'auto');
-                    
-                    modalContent.innerHTML = '';
-                    modalContent.appendChild(clonedSvg);
-                    
+            diagram.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const img = diagram.querySelector('.diagram-img, .project-diagram-img');
+                if (img) {
+                    modalImage.src = img.src;
+                    modalImage.alt = img.alt || 'Enlarged Diagram';
+                    if (modalCaption) {
+                        modalCaption.textContent = img.alt || 'Enlarged Diagram';
+                    }
                     modal.classList.add('active');
                     document.body.style.overflow = 'hidden';
                 }
@@ -94,9 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const closeModal = () => {
             modal.classList.remove('active');
             document.body.style.overflow = '';
-            setTimeout(() => {
-                modalContent.innerHTML = '';
-            }, 300);
         };
 
         if (modalClose) {
@@ -104,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         modal.addEventListener('click', (e) => {
-            if (e.target === modal || e.target.classList.contains('modal-caption')) {
+            if (e.target === modal || e.target.classList.contains('modal-content') || e.target === modalCaption) {
                 closeModal();
             }
         });
