@@ -1,0 +1,17 @@
+무조건 개조식 작성.
+
+본인이 무엇을 했고, 어떤 성장을 했고, 어떤 것들을 배웠고,
+내가 그 과정에서 어떠한 문제 설정을 해서 어떻게 해결했다.
+(키워드별로 3,4개 나열)  
+
+
+All project descriptions in index.html must adhere strictly to a clean, bulleted (개조식) format with the following 4 key sections:
+
+1. Key Contributions (본인이 수행한 역할 및 작업)
+
+2. Engineering Growth & Learnings (성장한 부분 및 습득한 지식)
+
+3. Problem Setting & Solution (문제 설정 및 해결 방안 - Highlight 3-4 key bullet points with bold keywords)
+
+4. Key Results & Metrics (정량적/정성적 성과)
+기타 활동

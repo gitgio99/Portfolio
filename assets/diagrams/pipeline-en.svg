@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="685" viewBox="0 0 1000 685" role="img"><title>pipeline system architecture</title><rect width="1000" height="685" fill="#ffffff"/>
+<text x="32" y="38" font-family="Malgun Gothic,Arial,sans-serif" font-size="25" font-weight="700" fill="#172c32">Align frames across separate image and label paths</text>
+<text x="32" y="70" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="400" fill="#566d72">Use time-based label indices to account for physics / image logging offsets</text>
+<text x="32" y="120" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="700" fill="#126b59">01  GPU IMAGE PATH</text>
+<rect x="32" y="143" width="230" height="105" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="47" y="172" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">Camera RGB</text>
+<text x="47" y="199" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">GPU sensor data</text>
+<text x="47" y="221" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">RSDA plugin input</text>
+<rect x="320" y="143" width="280" height="105" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="335" y="172" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">nvJPEG encode / save</text>
+<text x="335" y="199" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Generate JPEG image</text>
+<text x="335" y="221" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Name from sensor cycleNumber</text>
+<polyline points="262,196 320,196" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="320,196 311.0,192.0 311.0,200.0" fill="#126b59"/>
+<polyline points="600,196 665,196 665,282 715,282" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="715,282 706.0,278.0 706.0,286.0" fill="#126b59"/>
+<text x="320" y="290" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#a95232">SimCore.Time-based label index</text>
+<polyline points="460,301 460,348" fill="none" stroke="#a95232" stroke-width="2.5" stroke-dasharray="7 5"/>
+<polygon points="460,348 464.0,339.0 456.0,339.0" fill="#a95232"/>
+<text x="32" y="328" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="700" fill="#477b9e">02  CPU LABEL PATH</text>
+<rect x="32" y="348" width="230" height="110" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="47" y="377" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">Ground Truth objects</text>
+<text x="47" y="404" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">3D position · size · rotation</text>
+<text x="47" y="426" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Physics sensor metadata</text>
+<rect x="320" y="348" width="280" height="110" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="335" y="377" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">3D → 2D projection</text>
+<text x="335" y="404" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Camera FOV / resolution</text>
+<text x="335" y="426" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">YOLO labels / frame indices</text>
+<polyline points="262,403 320,403" fill="none" stroke="#477b9e" stroke-width="2.5" />
+<polygon points="320,403 311.0,399.0 311.0,407.0" fill="#477b9e"/>
+<polyline points="600,403 665,403 665,357 715,357" fill="none" stroke="#477b9e" stroke-width="2.5" />
+<polygon points="715,357 706.0,353.0 706.0,361.0" fill="#477b9e"/>
+<rect x="715" y="253" width="253" height="140" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="730" y="282" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">Image / label pairing</text>
+<text x="730" y="309" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Match by frame ID</text>
+<text x="730" y="331" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Align filename convention</text>
+<text x="730" y="353" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Account for timing offset</text>
+<polyline points="840,393 840,489 525,489 525,517" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="525,517 529.0,508.0 521.0,508.0" fill="#126b59"/>
+<rect x="32" y="517" width="936" height="96" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="47" y="546" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">Weather-conditioned training / evaluation data</text>
+<text x="47" y="573" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Build datasets from JPEG images and YOLO labels corresponding to the same frame</text>
+<text x="47" y="595" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Train the model on generated data and compare results across weather conditions</text>
+<text x="32" y="657" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="700" fill="#126b59">Core skills: GPU/CPU integration / time-based frame alignment / coordinate transforms</text>
+</svg>

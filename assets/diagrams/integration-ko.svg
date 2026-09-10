@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="610" viewBox="0 0 1000 610" role="img"><title>integration system architecture</title><rect width="1000" height="610" fill="#ffffff"/>
+<text x="32" y="38" font-family="Malgun Gothic,Arial,sans-serif" font-size="25" font-weight="700" fill="#172c32">모델과 실장비를 잇는 폐루프</text>
+<text x="32" y="70" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="400" fill="#566d72">명령·실측 피드백·물리적 연결을 구분한 기능 구성도</text>
+<rect x="32" y="94" width="936" height="173" rx="12" fill="#f7f9f6" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="49" y="119" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="700" fill="#126b59">SOFTWARE / 인터페이스 구현·매핑·검증</text>
+<rect x="64" y="142" width="310" height="97" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="79" y="171" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">가상 차량 모델</text>
+<text x="79" y="198" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">주행 입력 · 차량 동역학 계산</text>
+<text x="79" y="220" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">실측 토크 반영 · 속도 산출</text>
+<rect x="622" y="142" width="310" height="97" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="637" y="171" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">시험 제어 시스템</text>
+<text x="637" y="198" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">명령 변환 · 장비 제어</text>
+<text x="637" y="220" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">계측 데이터 수집 · 반환</text>
+<polyline points="374,163 622,163" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="622,163 613.0,159.0 613.0,167.0" fill="#126b59"/>
+<text x="397" y="150" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">토크·목표 속도 명령</text>
+<polyline points="622,220 374,220" fill="none" stroke="#477b9e" stroke-width="2.5" />
+<polygon points="374,220 383.0,224.0 383.0,216.0" fill="#477b9e"/>
+<text x="421" y="207" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#477b9e">실측 토크 피드백</text>
+<rect x="32" y="304" width="936" height="231" rx="12" fill="#f7f9f6" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="49" y="329" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="700" fill="#566d72">HARDWARE / 구동·부하·계측</text>
+<rect x="70" y="383" width="250" height="94" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="85" y="412" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">구동부</text>
+<text x="85" y="439" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">인버터 + 시험 모터</text>
+<rect x="665" y="383" width="260" height="94" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="680" y="412" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">부하 장치</text>
+<text x="680" y="439" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">목표 속도에 따른 부하 제어</text>
+<polyline points="681,239 681,284 194,284 194,383" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="194,383 198.0,374.0 190.0,374.0" fill="#126b59"/>
+<text x="252" y="277" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">토크 지령</text>
+<polyline points="851,239 851,383" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="851,383 855.0,374.0 847.0,374.0" fill="#126b59"/>
+<text x="863" y="358" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">속도 지령</text>
+<polyline points="320,430 665,430" fill="none" stroke="#566d72" stroke-width="2.5" />
+<text x="405" y="457" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">기계적 축 연결</text>
+<rect x="399" y="361" width="190" height="57" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="414" y="390" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">토크 계측</text>
+<polyline points="494,418 494,430" fill="none" stroke="#566d72" stroke-width="2.5" />
+<polyline points="494,361 494,315 760,315 760,239" fill="none" stroke="#477b9e" stroke-width="2.5" />
+<polygon points="760,239 756.0,248.0 764.0,248.0" fill="#477b9e"/>
+<text x="521" y="307" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#477b9e">측정값 수집</text>
+<text x="50" y="570" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="700" fill="#126b59">핵심 역량: 신호 의미·단위 정합 / 상태 초기화 / 통합 결과 분석</text>
+</svg>

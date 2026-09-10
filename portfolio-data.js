@@ -1,0 +1,218 @@
+/* Shared content for the website and the Korean PDF. ko / en pairs. */
+const portfolio = {
+  name: ['전지오', 'Jioh Jeon'], email: 'wldh0026@gmail.com', github: 'https://github.com/gitgio99',
+  awards: [
+    {title:['최우수상 · 최종 최우수팀(1위)','Grand Prize · First-place team'],issuer:['한화비전','Hanwha Vision'],date:'2025.08.07',topic:['이면도로 사각지대 사고방지 시스템','Blind-spot accident prevention system'],description:['임베디드/비전 AI 교육과정 최종 프로젝트에서 기술력과 협업 능력을 인정받아 최우수팀 선정','Selected as the top team in the embedded/vision AI final project for technical achievement and collaboration']},
+    {title:['우수 훈련생상','Outstanding Trainee Award'],issuer:['한화비전','Hanwha Vision'],date:'2025.08.07',topic:['임베디드/비전 AI 교육과정','Embedded / Vision AI program'],description:['교육과정 전반의 학업 성적 및 실습 평가 우수자로 선정되어 표창 수여','Recognized for outstanding academic performance and practical assessments throughout the program']},
+    {title:['우수상','Excellence Award'],issuer:['(주)선도소프트','Sundo Soft'],date:'2024.12.23',topic:['천안시 불법주정차 데이터 분석','Analysis of illegal parking data in Cheonan'],description:['공공데이터를 활용한 불법주정차 분석 아이디어의 활용성과 문제 해결 능력을 인정받아 수상','Recognized for the utility of a public-data analysis proposal and its problem-solving approach']},
+    {title:['장려상','Encouragement Award'],issuer:['강원대학교','Kangwon National University'],date:'2024.11.19',topic:['차선 및 물체인식 AI모빌리티','AI mobility with lane and object recognition'],description:['학부 졸업작품의 전공 지식 적용과 작품 완성도를 인정받아 수상','Recognized for applying engineering knowledge and completing a capstone prototype']}
+  ],
+  pendingCertificate:['정보처리기사 · 결과 발표 대기','Engineer Information Processing · result pending'],
+  projects: [
+    {
+      id:'display', no:'01', category:['firmware','systems'], year:'2025',
+      title:['STM32 디스플레이 제어와 DMA 확장','STM32 display control & DMA extension'],
+      subtitle:['이면도로 사각지대 사고방지 시스템 · VEDA 팀 프로젝트 / 후속 확장','Blind-spot warning system · VEDA team project / follow-up extension'],
+      period:['2025.06–08 · DMA 확장 2025.09 코드 기준','Jun–Aug 2025 · DMA extension: Sep 2025 source'],
+      role:['STM32 하드웨어 제어 및 통신 구현','STM32 hardware control and communication'],
+      summary:['경고 명령을 실제 디스플레이 출력으로 연결하고, 반복 GPIO 제어를 타이머·DMA 전송 구조로 확장','Connected warning commands to a physical display; extended GPIO polling into timer-triggered DMA transfers'],
+      tags:['C','STM32F401RE','UART / CRC16','TIM1 / DMA','GPIO BSRR'],
+      metric:['64 × 32','HUB75 RGB 디스플레이','HUB75 RGB display'],
+      flow:['Pixel / Clock','Word buffers × 2','TIM1 → DMA2','GPIOB → HUB75'],
+      flowNote:['CPU: 제어 워드 생성 · DMA: GPIO 전송 · 콜백: 버퍼 갱신 시점 관리','CPU builds control words · DMA writes GPIO · callbacks coordinate updates'],
+      sections:[
+        [['본인 기여','Contributions'],[
+          ['UART 프레임: STX/ETX/DLE 기반 파싱, CRC16 검증 및 ACK/NACK 응답 구현','UART framing: implemented STX/ETX/DLE parsing, CRC16 checks and ACK/NACK responses'],
+          ['출력 제어: 경고 표시·화면 ON/OFF·RTC 시각 동기화 구현','Display control: implemented warning output, on/off commands and RTC synchronization'],
+          ['후속 확장: TIM1 이벤트와 DMA 멀티버퍼를 이용한 BSRR 전송 구조 구현','Extension: implemented TIM1-triggered BSRR transfers with DMA multibuffering']]],
+        [['설계 판단과 문제 해결','Design decisions & problem solving'],[
+          ['핀 배치 제약: 분산된 신호를 GPIOB로 통합하여 단일 BSRR 목적지에 맞춘 핀맵 재구성','Pin constraint: consolidated signals on GPIOB for a single BSRR destination'],
+          ['연산과 전송 분리: 픽셀을 32-bit 제어 워드로 사전 변환하고 RAM 사용량과 CPU 작업량의 교환관계 검토','Compute / transfer separation: prebuilt 32-bit control words and considered the RAM versus CPU-work trade-off'],
+          ['버퍼 동기화: DMA 완료 콜백과 유휴 플래그를 이용해 출력 버퍼와 갱신 버퍼 구분','Buffer synchronization: used DMA completion callbacks and availability flags to coordinate rendering']]],
+        [['성장과 학습','Learning'],[
+          ['레지스터·타이머·DMA의 연결 관계 이해 및 인터럽트 기반 버퍼 관리 경험','Developed an understanding of registers, timers and DMA, with interrupt-driven buffer management'],
+          ['프로토콜 수신 처리와 물리 출력 타이밍을 구분하는 펌웨어 설계 경험','Learned to separate protocol handling from physical display timing']]],
+        [['결과와 확인 범위','Results & scope'],[
+          ['팀 성과: 한화비전 VEDA 최종 프로젝트 최우수상(1위), 2025.08.07','Team result: first-place VEDA final project award, Hanwha Vision, Aug 7, 2025'],
+          ['구현 결과: GPIO / DMA 두 버전의 출력 구조 및 UART 진단 코드 구성','Implementation: GPIO and DMA output structures with UART diagnostic code']]]
+      ],
+      repo:'https://github.com/gitgio99/stm-32',
+      relevance:['주변장치 제어 · 데이터 이동 · 펌웨어 구조','Peripheral control · data movement · firmware structure']
+    },
+    {
+      id:'linux', no:'02', category:['linux','firmware'], year:'2025',
+      title:['Linux TCP 원격 장치 제어','Linux TCP remote device control'],
+      subtitle:['Raspberry Pi 서버와 Ubuntu 클라이언트 · VEDA 프로젝트','Raspberry Pi server and Ubuntu client · VEDA project'],
+      period:['2025.05.21–23','May 21–23, 2025'],role:['C 기반 클라이언트·서버 및 장치 모듈 개발','C client/server and device-module development'],
+      summary:['네트워크 명령을 장치별 공유 라이브러리로 분리해 LED·부저·센서·7세그먼트를 제어','Routed network commands through device-specific shared libraries to control LEDs, a buzzer, a sensor and a seven-segment display'],
+      tags:['C','Linux','TCP sockets','pthread','dlopen / dlsym'],
+      metric:['4','장치 제어 모듈','device-control modules'],flow:['Ubuntu CLI','TCP / pthread','dlopen → .so','Raspberry Pi GPIO'],
+      flowNote:['사용자 공간 제어: TCP 명령 → 동적 심볼 조회 → wiringPi 장치 제어','User-space control: TCP command → symbol lookup → wiringPi device control'],
+      sections:[
+        [['본인 기여','Contributions'],[
+          ['통신 구현: TCP 클라이언트·서버와 클라이언트별 pthread 처리 구성','Networking: built a TCP client/server with per-client pthread handling'],
+          ['모듈 분리: LED·부저·조도센서·7세그먼트 제어를 .so 라이브러리로 구성','Modules: separated LED, buzzer, light-sensor and seven-segment control into .so libraries'],
+          ['운영 기능: 데몬화, 로그 출력, Makefile 기반 빌드 구성','Operation: implemented daemonization, logging and Makefile builds']]],
+        [['설계 판단과 문제 해결','Design decisions & problem solving'],[
+          ['장치별 분기: 명령에서 장치명을 해석하고 dlopen/dlsym으로 제어 함수 연결','Dispatch: parsed device names and resolved control functions with dlopen/dlsym'],
+          ['긴 작업 분리: 부저 재생을 별도 스레드로 실행하는 구조 적용','Long-running work: moved buzzer playback to a separate thread'],
+          ['실행 환경: 데몬의 작업 디렉터리 변화에 맞춰 라이브러리·로그 경로 명시','Runtime paths: specified library and log locations for daemon execution']]],
+        [['성장과 학습','Learning'],[
+          ['소켓·프로세스·스레드·동적 링크가 결합되는 Linux 실행 구조 이해','Learned how sockets, processes, threads and dynamic linking interact on Linux'],
+          ['명령 처리와 하드웨어 접근을 모듈 경계로 분리하는 인터페이스 설계 경험','Practiced interface design between command handling and hardware access']]],
+        [['결과와 확인 범위','Results & scope'],[
+          ['구현 결과: 원격 CLI에서 4종 장치의 명령 처리 및 상태 응답 구성','Implementation: remote CLI commands and status responses for four device types'],
+          ['개발 범위: wiringPi 기반 사용자 공간 장치 제어와 공유 라이브러리 연동','Scope: wiringPi-based user-space device control with shared-library integration']]]
+      ],repo:'https://github.com/gitgio99/TCP_module_control',relevance:['Linux 시스템 프로그래밍 · 장치 추상화 · 네트워크','Linux systems programming · device abstraction · networking']
+    },
+    {
+      id:'integration',no:'03',category:['systems','firmware'],year:'2026',
+      title:['실시간 차량 모델·시험장비 연동','Real-time model & test-equipment integration'],
+      subtitle:['차량 모델·시험장비 연동 · 실무 프로젝트','Vehicle model and test-equipment integration · professional project'],
+      period:['2026.03–06 · 후속 기술지원','Mar–Jun 2026 · follow-up support'],role:['C 제어 로직·신호 매핑·통합 검증','C control logic, signal mapping and integration verification'],
+      summary:['차량 모델과 실장비 사이의 신호 의미·단위·상태를 맞추고, 시험 결과로 연동 문제를 추적','Aligned signal meaning, units and lifecycle states between a vehicle model and physical equipment'],
+      tags:['C','Real-time model','Control logic','CAN / RBS','System integration'],metric:['Closed loop','모델 ↔ 실장비 연동','model ↔ equipment integration'],
+      flow:['Vehicle model','Signal mapping','CAN / RBS','Test equipment'],flowNote:['명령 송신 → 실측 피드백 → 모델 반영 · 구성도는 역할 중심 요약','Command → measured feedback → model update · conceptual overview'],
+      sections:[
+        [['본인 기여','Contributions'],[
+          ['제어 로직: 토크 분배·변화량 제한·상태 초기화를 위한 C 로직 구현','Control logic: implemented torque distribution, change limiting and state initialization in C'],
+          ['인터페이스: 모델 변수와 시험장비 신호의 CAN/RBS 매핑 검토·수정','Interfaces: reviewed and corrected CAN/RBS mappings between model and equipment'],
+          ['통합 검증: Office·실장비 환경의 주행 결과 비교 및 결과 자료 작성','Integration: compared office simulation and testbed runs and documented findings']]],
+        [['설계 판단과 문제 해결','Design decisions & problem solving'],[
+          ['초기화 순서: 실행 시 생성되는 모델 변수의 연결 시점과 유효성 점검','Initialization order: checked availability and binding time of runtime model variables'],
+          ['신호 정합성: 토크·휠 속도·모터 속도의 의미와 변환 관계를 구분하여 매핑 검토','Signal consistency: distinguished torque, wheel speed and motor speed when checking mappings'],
+          ['상태 전환: 시험 시작 시 이전 상태 초기화, 종료 시 출력 정리 로직 구성','Lifecycle: reset prior state at test start and cleared outputs at termination']]],
+        [['성장과 학습','Learning'],[
+          ['코드·모델·통신·물리 장비를 함께 보는 시스템 단위 원인 분석 경험','Gained experience tracing issues across code, models, communication and physical equipment'],
+          ['이상적 시뮬레이션과 실장비 응답 지연을 구분하는 시험 결과 해석','Learned to distinguish ideal simulation behavior from physical response delays']]],
+        [['결과와 확인 범위','Results & scope'],[
+          ['보고서 결과: 폐루프 통신·매핑 동작 확인 및 주행 시나리오 비교 정리','Reported result: confirmed closed-loop communication/mapping and compared driving scenarios'],
+          ['관찰 사항: 실장비 응답 지연에 따른 초기 속도 차이를 결과에 명시','Observation: documented initial speed differences associated with equipment response delay']]]
+      ],relevance:['요구사항 해석 · 인터페이스 정합성 · 체계 통합','Requirements interpretation · interface consistency · system integration']
+    },
+    {
+      id:'pipeline',no:'04',category:['linux','data','systems'],year:'2026',
+      title:['GPU 이미지·라벨 생성 파이프라인','GPU image & label generation pipeline'],
+      subtitle:['기상 조건별 인식 평가를 위한 개인 프로젝트 · IPG Automotive Korea','Individual weather-based perception evaluation project · IPG Automotive Korea'],
+      period:['2026 · 신입 개인 프로젝트','2026 · individual onboarding project'],role:['C++/CUDA 이미지 추출·라벨 생성·동기화','C++/CUDA image extraction, labeling and synchronization'],
+      summary:['GPU 이미지와 물리 센서 정보를 같은 프레임 기준으로 묶어 학습용 데이터 생성 과정을 자동화','Automated dataset generation by aligning GPU images and physical sensor metadata on a common frame index'],
+      tags:['C++17','Linux','CUDA / nvJPEG','Python','Coordinate transforms'],metric:['2 → 1','이미지·라벨의 공통 시간 기준','shared timebase for image and label'],
+      branched:true,flow:['GPU RGB → JPEG','GT → 2D labels','SimCore.Time ID','Image / Label pairs'],flowNote:['병렬 생성되는 이미지·라벨을 시뮬레이션 시간 기반 인덱스로 연결','Pair separately generated images and labels using simulation-time indices'],
+      sections:[
+        [['본인 기여','Contributions'],[
+          ['이미지 추출: RSDA GPU 플러그인과 nvJPEG를 활용한 캡처·저장 경로 구성','Image extraction: configured capture and storage using an RSDA GPU plugin and nvJPEG'],
+          ['라벨 생성: 3D 객체의 코너점을 카메라 좌표로 투영하고 YOLO 형식으로 변환','Labeling: projected 3D object corners into camera coordinates and converted them to YOLO format'],
+          ['평가 구성: 날씨별 데이터 생성과 YOLOv8m 학습·비교 흐름 구축','Evaluation: built weather-conditioned data generation and YOLOv8m training/comparison workflows']]],
+        [['설계 판단과 문제 해결','Design decisions & problem solving'],[
+          ['시점 불일치: 이미지 로깅과 물리 계산의 차이를 프레임 대응 문제로 정의','Timing mismatch: identified image logging versus physics timing as a frame-pairing problem'],
+          ['공통 인덱스: 단순 카운터 대신 SimCore.Time 기반의 프레임 번호 계산 적용','Common index: replaced a simple counter with a SimCore.Time-based frame calculation'],
+          ['좌표 정합성: FOV·해상도·객체 회전을 반영한 투영과 정규화 처리','Coordinate consistency: accounted for FOV, resolution and object rotation in projection and normalization']]],
+        [['성장과 학습','Learning'],[
+          ['GPU 처리 경로와 CPU 메타데이터 처리의 연결 및 시간 동기화 경험','Learned to connect GPU processing with CPU metadata and synchronize their timing'],
+          ['모델 성능 검토에 앞서 입력 데이터 정합성을 확인하는 문제 해결 경험','Practiced checking input-data consistency before interpreting model performance']]],
+        [['결과와 확인 범위','Results & scope'],[
+          ['구현 결과: 이미지 저장·GT 라벨 생성·프레임 인덱싱 자동화','Implementation: automated image storage, GT label generation and frame indexing'],
+          ['평가 구성: 기상 조건별 이미지·라벨을 활용한 모델 학습과 결과 비교','Evaluation: model training and comparison using weather-conditioned images and labels']]]
+      ],relevance:['Linux / C++ · 데이터 파이프라인 · 동기화','Linux / C++ · data pipelines · synchronization']
+    },
+    {
+      id:'migration',no:'05',category:['linux','systems'],year:'2026',
+      title:['실시간 타깃 빌드 환경 업그레이드','Real-time target build-environment upgrade'],
+      subtitle:['시뮬레이션·시험 플랫폼 기술지원 · IPG Automotive Korea','Simulation/test-platform technical support · IPG Automotive Korea'],
+      period:['2026.06 · 현장 기술지원','Jun 2026 · on-site technical support'],role:['빌드 설정·타깃 호환성·연동 환경 분석','Build configuration, target compatibility and integration analysis'],
+      summary:['호스트와 타깃의 차이를 기준으로 빌드 경로·라이브러리·런타임 환경의 호환성 문제를 분해','Decomposed compatibility issues across build paths, libraries and runtime environments by separating host and target requirements'],
+      tags:['Linux target','Python build scripts','QNX / Linux','Static / shared libs','dSPACE'],metric:['Host / Target','빌드·실행 환경 구분','build / execution environments'],
+      flow:['Host build setup','Target architecture','Libraries / firmware','Runtime / network'],flowNote:['타깃별 설정과 의존성을 단계별로 검토한 업그레이드 지원 경험','Upgrade support through staged checks of target configuration and dependencies'],
+      sections:[
+        [['본인 기여','Contributions'],[
+          ['설정 검토: 버전별 빌드 스크립트·검색 경로·사용자 라이브러리 비교','Configuration: compared versioned build scripts, search paths and custom libraries'],
+          ['호환성 분석: QNX/Linux 타깃과 32/64비트 라이브러리 차이 검토','Compatibility: reviewed QNX/Linux targets and 32/64-bit library differences'],
+          ['현장 지원: 빌드 로그·펌웨어 버전·네트워크 설정의 점검 과정 기록','Field support: documented checks of build logs, firmware versions and network settings']]],
+        [['설계 판단과 문제 해결','Design decisions & problem solving'],[
+          ['경로 오류: 다른 환경의 검색 경로가 남은 설정을 확인하고 수정','Path errors: identified and corrected search paths inherited from another environment'],
+          ['타깃 차이: 호스트 OS가 아닌 실제 실행 타깃 기준으로 라이브러리 형식 검토','Target differences: reviewed library formats against the execution target rather than the host OS'],
+          ['단계별 점검: 모델 빌드·타깃 펌웨어·NFS 연결을 나눠 오류 발생 구간 추적','Staged diagnosis: separated model builds, target firmware and NFS connectivity when tracing failures']]],
+        [['성장과 학습','Learning'],[
+          ['임베디드 SW의 빌드 산출물과 실제 실행 환경 사이의 의존성 이해','Learned dependencies between embedded build outputs and execution environments'],
+          ['로그와 버전 차이를 근거로 원인 후보를 좁히는 기술지원 경험','Practiced narrowing down causes using logs and version differences']]],
+        [['결과와 확인 범위','Results & scope'],[
+          ['확인 결과: 경로 수정 및 타깃·라이브러리 호환성 검토 내용 문서화','Verified work: documented path corrections and target/library compatibility review'],
+          ['업무 산출물: 버전별 의존성·설정 변경 사항을 기록하여 현장 점검에 활용','Output: recorded version-specific dependencies and configuration changes for field diagnosis']]]
+      ],relevance:['빌드 의존성 · 타깃 이해 · 시스템 디버깅','Build dependencies · target awareness · system debugging']
+    },
+    {
+      id:'sensor',no:'06',category:['data','systems'],year:'2024',
+      title:['LiDAR·카메라 데이터 정합과 변형','LiDAR / camera alignment & data transformation'],
+      subtitle:['센서 퓨전 이상 탐지 연구 지원 · 학부연구생','Sensor-fusion anomaly-detection research support · undergraduate research'],
+      period:['2024.03–12','Mar–Dec 2024'],role:['센서 데이터 전처리·시각화·변형 데이터 생성','Sensor preprocessing, visualization and transformed-data generation'],
+      summary:['서로 다른 센서 좌표와 채널을 연결하고, 객체 단위 변형으로 이상 상황 분석용 데이터 구성','Aligned sensor coordinates and channels, then generated object-level transformations for anomaly-analysis data'],
+      tags:['Python','KITTI / nuScenes','Open3D','NumPy','Calibration'],metric:['5 channels','RGB + Intensity + Depth','RGB + Intensity + Depth'],
+      flow:['LiDAR / Camera','Calibration','Projection / Align','5-channel data'],flowNote:['센서 융합 데이터 구성과 객체 단위 복사·이동·삭제 실험','Sensor-fusion inputs and object-level copy, move and removal experiments'],
+      sections:[
+        [['본인 기여','Contributions'],[
+          ['데이터 처리: KITTI·nuScenes 포인트 클라우드의 시각화 및 변형','Data processing: visualized and transformed KITTI and nuScenes point clouds'],
+          ['융합 입력: 카메라 RGB와 LiDAR intensity·depth를 결합한 5채널 데이터 생성','Fusion input: generated five-channel data from RGB, LiDAR intensity and depth'],
+          ['실험 데이터: Bounding Box 단위의 포인트 복사·이동·삭제 처리 자동화','Experimental data: automated bounding-box-level point copying, moving and removal']]],
+        [['설계 판단과 문제 해결','Design decisions & problem solving'],[
+          ['좌표계 차이: 보정 정보를 적용해 3D 포인트와 이미지 픽셀 대응 확인','Coordinate frames: used calibration data to check 3D-point / image-pixel correspondence'],
+          ['채널 정합: RGB·거리·반사 강도의 의미를 구분해 융합 입력 구성','Channel alignment: retained the distinct meanings of RGB, distance and reflectance'],
+          ['반복 실험: 객체 단위 변형 절차를 코드화하여 수작업 반복 축소','Repeatability: encoded object-level transformations to reduce repeated manual work']]],
+        [['성장과 학습','Learning'],[
+          ['다중 센서 데이터의 좌표 변환·투영·전처리 흐름 이해','Learned multi-sensor coordinate transforms, projection and preprocessing'],
+          ['시각화를 통해 데이터 처리 결과를 검토하는 연구 작업 경험','Practiced visual inspection of data-processing results']]],
+        [['결과와 확인 범위','Results & scope'],[
+          ['산출물: 5채널 생성 및 객체 변형 실험 노트북 구성','Outputs: notebooks for five-channel generation and object-level transformations'],
+          ['결과 점검: 객체 단위 변형으로 이상 상황을 구성하고 융합 입력을 시각적으로 확인','Result inspection: constructed object-level anomalous scenarios and visually checked fusion inputs']]]
+      ],relevance:['센서 인터페이스 · 좌표 정합 · 데이터 처리','Sensor interfaces · coordinate alignment · data processing']
+    },
+    {
+      id:'qt',no:'07',category:['linux','systems'],year:'2025',
+      title:['CCTV 유지보수 예약 관리','CCTV maintenance scheduling'],
+      subtitle:['C++ / Qt 기반 업무 도구 · VEDA 팀 프로젝트','C++ / Qt workflow tool · VEDA team project'],
+      period:['2025 · VEDA 교육과정','2025 · VEDA program'],role:['예약 등록·조회 기능 담당','Reservation registration and viewing'],
+      summary:['업무 규칙을 예약 검증 로직으로 옮기고, 일정 등록과 조회 화면을 연결','Translated scheduling rules into validation logic and connected registration with schedule views'],
+      tags:['C++17','Qt 6','Signal / Slot','JSON','CMake'],metric:['3 / hour','시간대별 예약 상한','reservation limit per hour'],
+      flow:['Register','Validate capacity','JSON data','Schedule view'],flowNote:['본인 담당 범위: 예약 등록·조회 · 팀 공통 데이터 구조와 연동','Owned registration and viewing; integrated with shared team data structures'],
+      sections:[
+        [['본인 기여','Contributions'],[
+          ['등록 화면: 날짜·시간 선택 및 예약 검증 로직 구현','Registration: implemented date/time selection and reservation validation'],
+          ['조회 화면: 날짜별 일정 표시 및 예약 수정·삭제 흐름 구현','Schedule view: implemented date-based display and edit/delete flows']]],
+        [['설계 판단과 문제 해결','Design decisions & problem solving'],[
+          ['업무 제약: 시간대별 예약 수를 검사해 최대 3개 제한 적용','Business rule: counted reservations in each time slot and enforced a limit of three'],
+          ['화면 연동: Signal/Slot 기반으로 등록·수정 결과를 조회 화면에 반영','View integration: used signals/slots to propagate registration and update results'],
+          ['정보 전달: 시간 정렬과 색상·완료 상태를 이용해 일정 식별 지원','Presentation: used time ordering, color and completion state to make schedules identifiable']]],
+        [['성장과 학습','Learning'],[
+          ['업무 요구사항을 UI 이벤트와 데이터 검증 규칙으로 구체화하는 경험','Practiced translating workflow requirements into UI events and validation rules'],
+          ['팀 공통 데이터와 본인 담당 화면을 연결하는 협업 경험','Learned to integrate owned UI features with shared team data']]],
+        [['결과와 확인 범위','Results & scope'],[
+          ['구현 결과: 예약 등록·조회·수정·삭제 및 예약 상한 검사','Implementation: reservation creation, viewing, editing, deletion and capacity checks'],
+          ['기능 연동: 담당 등록·조회 화면을 팀 공통 데이터 구조와 연결','Integration: connected owned registration and viewing features with shared team data']]]
+      ],relevance:['C++ 모듈 설계 · 요구사항 구현 · 팀 협업','C++ modular design · requirements implementation · collaboration']
+    },
+    {
+      id:'mobility',no:'08',category:['systems','data'],year:'2024',
+      title:['카메라 기반 AI 모빌리티','Camera-based AI mobility'],
+      subtitle:['차선 추적·객체 인식·모터 제어 통합 · 졸업 프로젝트','Lane following, object recognition and motor control · capstone project'],
+      period:['2023.09–2024.05','Sep 2023–May 2024'],role:['팀장 · 영상 처리 및 주행 시스템 개발 참여','Team lead · image-processing and driving-system development'],
+      summary:['카메라 입력부터 인식·판단·모터 제어까지 연결해 모의 트랙에서 동작하는 시스템 구현','Connected camera input, perception, decisions and motor control into a system demonstrated on a test track'],
+      tags:['Python','Raspberry Pi 4B','OpenCV','Keras','Bluetooth serial'],metric:['Sense → Act','인식부터 물리 동작까지','perception to physical action'],
+      flow:['Camera','CNN / Detection','Driving decision','Serial → Motors'],flowNote:['팀 구현: 차선 추적과 사람 감지 시 정지·재출발 동작','Team implementation: lane following, stopping on person detection and resuming'],
+      sections:[
+        [['본인 기여','Contributions'],[
+          ['프로젝트 운영: 팀장으로 졸업 프로젝트 진행 및 통합 개발 참여','Project execution: led the capstone team and contributed to system integration'],
+          ['인식·제어: OpenCV 영상 처리와 학습 모델을 활용한 주행 시스템 개발 참여','Perception/control: contributed to a driving system using OpenCV and learned models']]],
+        [['설계 판단과 문제 해결','Design decisions & problem solving'],[
+          ['입력 편향: 팀에서 좌·직진·우 주행 데이터를 균형 있게 수집하여 학습 입력 구성','Input bias: the team collected balanced left, straight and right driving samples'],
+          ['판단 연결: 차선 추적 결과와 사람 감지 결과를 모터 명령에 연결','Decision flow: connected lane-following and person-detection outputs to motor commands'],
+          ['통합 확인: 모의 트랙에서 주행 및 정지 후 재출발 동작 확인','Integration check: observed driving, stopping and resuming on a test track']]],
+        [['성장과 학습','Learning'],[
+          ['센서 입력·추론·통신·구동기의 전체 처리 흐름을 구성한 경험','Gained experience building a sensor-to-inference-to-communication-to-actuator pipeline'],
+          ['개별 기능 구현을 실제 하드웨어 동작으로 연결하는 통합 관점 습득','Learned to connect individual software functions to physical hardware behavior']]],
+        [['결과와 확인 범위','Results & scope'],[
+          ['팀 결과: 트랙 내 차선 주행과 사람 감지 시 정지·재출발 확인','Team result: demonstrated lane following and person-triggered stop/resume behavior on a track'],
+          ['수상: 강원대학교 졸업작품 장려상, 2024.11.19 · 검증 범위는 모의 트랙','Award: Kangwon National University capstone encouragement award, Nov 19, 2024; validated on a test track']]]
+      ],relevance:['HW/SW 통합 · 센서 처리 · 제어 흐름','HW/SW integration · sensor processing · control flow']
+    }
+  ]
+};
+if (typeof module !== 'undefined') module.exports = portfolio;

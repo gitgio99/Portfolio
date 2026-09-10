@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="630" viewBox="0 0 1000 630" role="img"><title>linux system architecture</title><rect width="1000" height="630" fill="#ffffff"/>
+<text x="32" y="38" font-family="Malgun Gothic,Arial,sans-serif" font-size="25" font-weight="700" fill="#172c32">Connect network commands to device-control modules</text>
+<text x="32" y="70" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="400" fill="#566d72">User-space SW: client → server → shared libraries → GPIO</text>
+<rect x="32" y="147" width="215" height="123" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="47" y="176" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">Ubuntu client</text>
+<text x="47" y="203" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">CLI command input</text>
+<text x="47" y="225" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Validation · responses</text>
+<rect x="347" y="98" width="621" height="447" rx="12" fill="#f7f9f6" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="364" y="124" font-family="Malgun Gothic,Arial,sans-serif" font-size="17" font-weight="700" fill="#126b59">Raspberry Pi 4 / Linux server</text>
+<rect x="380" y="147" width="550" height="112" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="395" y="176" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">TCP server · per-client pthread</text>
+<text x="395" y="203" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Parse command → identify device → resolve control function</text>
+<text x="395" y="225" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Daemon process · logging</text>
+<polyline points="247,178 380,178" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="380,178 371.0,174.0 371.0,182.0" fill="#126b59"/>
+<text x="271" y="164" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">TCP command</text>
+<polyline points="380,238 247,238" fill="none" stroke="#477b9e" stroke-width="2.5" />
+<polygon points="247,238 256.0,242.0 256.0,234.0" fill="#477b9e"/>
+<text x="277" y="225" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#477b9e">Response</text>
+<polyline points="655,259 655,290 439,290" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polyline points="655,290 883,290" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polyline points="439,290 439,304" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="439,304 443.0,295.0 435.0,295.0" fill="#126b59"/>
+<polyline points="587,290 587,304" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="587,304 591.0,295.0 583.0,295.0" fill="#126b59"/>
+<polyline points="735,290 735,304" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="735,304 739.0,295.0 731.0,295.0" fill="#126b59"/>
+<polyline points="883,290 883,304" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="883,304 887.0,295.0 879.0,295.0" fill="#126b59"/>
+<text x="672" y="278" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#126b59">dlopen / dlsym</text>
+<rect x="370" y="304" width="139" height="85" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="385" y="333" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">libled.so</text>
+<text x="385" y="360" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Brightness · on/off</text>
+<rect x="518" y="304" width="139" height="85" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="533" y="333" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">libbuz.so</text>
+<text x="533" y="360" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Playback thread</text>
+<rect x="666" y="304" width="139" height="85" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="681" y="333" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">libcds.so</text>
+<text x="681" y="360" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Light sensing</text>
+<rect x="814" y="304" width="139" height="85" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="829" y="333" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">libseg.so</text>
+<text x="829" y="360" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Countdown</text>
+<rect x="380" y="447" width="550" height="62" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="395" y="476" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">wiringPi / softPwm / softTone</text>
+<polyline points="439,389 439,447" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="439,447 443.0,438.0 435.0,438.0" fill="#126b59"/>
+<polyline points="587,389 587,447" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="587,447 591.0,438.0 583.0,438.0" fill="#126b59"/>
+<polyline points="735,389 735,447" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="735,447 739.0,438.0 731.0,438.0" fill="#126b59"/>
+<polyline points="883,389 883,447" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="883,447 887.0,438.0 879.0,438.0" fill="#126b59"/>
+<text x="402" y="535" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="400" fill="#126b59">GPIO → LED / BUZZER / CDS / 7-Segment</text>
+<text x="32" y="587" font-family="Malgun Gothic,Arial,sans-serif" font-size="17" font-weight="700" fill="#126b59">Core skills: sockets &amp; threads / dynamic linking / modular device control</text>
+</svg>

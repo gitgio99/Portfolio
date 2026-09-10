@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="855" viewBox="0 0 1000 855" role="img"><title>display system architecture</title><rect width="1000" height="855" fill="#ffffff"/>
+<text x="32" y="38" font-family="Malgun Gothic,Arial,sans-serif" font-size="25" font-weight="700" fill="#172c32">01  From warning event to physical output</text>
+<text x="32" y="68" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="400" fill="#126b59">Owned area within the team: STM32 communication, commands and HUB75 control</text>
+<rect x="32" y="115" width="180" height="105" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="47" y="144" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">CCTV</text>
+<text x="47" y="171" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Video / metadata</text>
+<rect x="282" y="115" width="225" height="105" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="297" y="144" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">Server</text>
+<text x="297" y="171" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Event / motion analysis</text>
+<text x="297" y="193" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Risk / command logic</text>
+<rect x="588" y="115" width="225" height="105" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="603" y="144" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">STM32 · owned</text>
+<text x="603" y="171" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Receive FSM · CRC16</text>
+<text x="603" y="193" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Commands · RTC sync</text>
+<rect x="862" y="115" width="110" height="105" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="877" y="144" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">HUB75</text>
+<text x="877" y="171" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">64 × 32</text>
+<text x="877" y="193" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Warning</text>
+<polyline points="212,165 282,165" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="282,165 273.0,161.0 273.0,169.0" fill="#126b59"/>
+<text x="216" y="150" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">Data</text>
+<polyline points="507,145 588,145" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="588,145 579.0,141.0 579.0,149.0" fill="#126b59"/>
+<text x="520" y="131" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">UART</text>
+<polyline points="588,198 507,198" fill="none" stroke="#477b9e" stroke-width="2.5" />
+<polygon points="507,198 516.0,202.0 516.0,194.0" fill="#477b9e"/>
+<text x="514" y="184" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#477b9e">ACK/NACK</text>
+<polyline points="813,165 862,165" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="862,165 853.0,161.0 853.0,169.0" fill="#126b59"/>
+<text x="819" y="150" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">GPIO</text>
+<rect x="282" y="278" width="225" height="80" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="297" y="307" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">Qt monitoring client</text>
+<text x="297" y="334" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Video / event view</text>
+<polyline points="394,220 394,278" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="394,278 398.0,269.0 390.0,269.0" fill="#126b59"/>
+<text x="409" y="254" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">RTSP / TCP</text>
+<text x="588" y="266" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#126b59">Green area = owned scope</text>
+<text x="588" y="295" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Communication and physical output</text>
+<text x="588" y="318" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">separated from team server work</text>
+<text x="32" y="415" font-family="Malgun Gothic,Arial,sans-serif" font-size="25" font-weight="700" fill="#172c32">02  Follow-up: timer-triggered DMA output</text>
+<text x="32" y="447" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="400" fill="#566d72">CPU prepares control words; DMA transfers them to the GPIO register</text>
+<rect x="32" y="473" width="936" height="305" rx="12" fill="#f7f9f6" stroke="#cddbd5" stroke-width="1.5"/>
+<rect x="53" y="500" width="190" height="88" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="68" y="529" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">CPU</text>
+<text x="68" y="556" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Build control words</text>
+<text x="68" y="578" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Update free buffer</text>
+<rect x="304" y="500" width="210" height="88" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="319" y="529" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">RAM · two buffers</text>
+<text x="319" y="556" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">M0 / M1</text>
+<text x="319" y="578" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">32-bit BSRR words</text>
+<rect x="584" y="500" width="170" height="88" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="599" y="529" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">DMA2</text>
+<text x="599" y="556" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Memory → I/O</text>
+<rect x="813" y="500" width="137" height="88" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="828" y="529" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">GPIOB</text>
+<text x="828" y="556" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">BSRR</text>
+<polyline points="243,541 304,541" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="304,541 295.0,537.0 295.0,545.0" fill="#126b59"/>
+<polyline points="514,541 584,541" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="584,541 575.0,537.0 575.0,545.0" fill="#126b59"/>
+<polyline points="754,541 813,541" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="813,541 804.0,537.0 804.0,545.0" fill="#126b59"/>
+<rect x="321" y="650" width="176" height="74" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="336" y="679" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">TIM1</text>
+<text x="336" y="706" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Update event</text>
+<polyline points="497,686 667,686 667,588" fill="none" stroke="#a95232" stroke-width="2.5" stroke-dasharray="7 5"/>
+<polygon points="667,588 663.0,597.0 671.0,597.0" fill="#a95232"/>
+<text x="514" y="674" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#a95232">DMA request</text>
+<rect x="813" y="650" width="137" height="74" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="828" y="679" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">HUB75</text>
+<text x="828" y="706" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">LED output</text>
+<polyline points="881,588 881,650" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="881,650 885.0,641.0 877.0,641.0" fill="#126b59"/>
+<text x="896" y="623" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">Signals</text>
+<polyline points="148,588 148,686 321,686" fill="none" stroke="#a95232" stroke-width="2.5" stroke-dasharray="7 5"/>
+<polygon points="321,686 312.0,682.0 312.0,690.0" fill="#a95232"/>
+<text x="165" y="674" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#a95232">Initialization</text>
+<text x="52" y="757" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#477b9e">Transfer callback → buffer availability check → next rendering pass</text>
+<text x="32" y="818" font-family="Malgun Gothic,Arial,sans-serif" font-size="17" font-weight="700" fill="#126b59">Design focus: separate commands, output timing and data transfer</text>
+</svg>

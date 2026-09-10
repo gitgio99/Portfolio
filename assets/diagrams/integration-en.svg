@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="610" viewBox="0 0 1000 610" role="img"><title>integration system architecture</title><rect width="1000" height="610" fill="#ffffff"/>
+<text x="32" y="38" font-family="Malgun Gothic,Arial,sans-serif" font-size="25" font-weight="700" fill="#172c32">Closed loop between model and physical equipment</text>
+<text x="32" y="70" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="400" fill="#566d72">Functional view: commands, measured feedback and mechanical coupling</text>
+<rect x="32" y="94" width="936" height="173" rx="12" fill="#f7f9f6" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="49" y="119" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="700" fill="#126b59">SOFTWARE / Interface implementation, mapping and verification</text>
+<rect x="64" y="142" width="310" height="97" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="79" y="171" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">Virtual vehicle model</text>
+<text x="79" y="198" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Driving input · vehicle dynamics</text>
+<text x="79" y="220" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Measured torque · speed output</text>
+<rect x="622" y="142" width="310" height="97" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="637" y="171" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">Test control system</text>
+<text x="637" y="198" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Command conversion · control</text>
+<text x="637" y="220" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Measurement collection · return</text>
+<polyline points="374,163 622,163" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="622,163 613.0,159.0 613.0,167.0" fill="#126b59"/>
+<text x="397" y="150" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">Torque / speed commands</text>
+<polyline points="622,220 374,220" fill="none" stroke="#477b9e" stroke-width="2.5" />
+<polygon points="374,220 383.0,224.0 383.0,216.0" fill="#477b9e"/>
+<text x="421" y="207" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#477b9e">Measured torque feedback</text>
+<rect x="32" y="304" width="936" height="231" rx="12" fill="#f7f9f6" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="49" y="329" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="700" fill="#566d72">HARDWARE / Drive, load and measurement</text>
+<rect x="70" y="383" width="250" height="94" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="85" y="412" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">Drive unit</text>
+<text x="85" y="439" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Inverter + motor under test</text>
+<rect x="665" y="383" width="260" height="94" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="680" y="412" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">Load equipment</text>
+<text x="680" y="439" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Load control for target speed</text>
+<polyline points="681,239 681,284 194,284 194,383" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="194,383 198.0,374.0 190.0,374.0" fill="#126b59"/>
+<text x="252" y="277" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">Torque command</text>
+<polyline points="851,239 851,383" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="851,383 855.0,374.0 847.0,374.0" fill="#126b59"/>
+<text x="863" y="358" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">Speed</text>
+<polyline points="320,430 665,430" fill="none" stroke="#566d72" stroke-width="2.5" />
+<text x="405" y="457" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Mechanical shaft</text>
+<rect x="399" y="361" width="190" height="57" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="414" y="390" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">Torque sensing</text>
+<polyline points="494,418 494,430" fill="none" stroke="#566d72" stroke-width="2.5" />
+<polyline points="494,361 494,315 760,315 760,239" fill="none" stroke="#477b9e" stroke-width="2.5" />
+<polygon points="760,239 756.0,248.0 764.0,248.0" fill="#477b9e"/>
+<text x="521" y="307" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#477b9e">Measurement</text>
+<text x="50" y="570" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="700" fill="#126b59">Core skills: signal consistency / lifecycle initialization / integration analysis</text>
+</svg>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="855" viewBox="0 0 1000 855" role="img"><title>display system architecture</title><rect width="1000" height="855" fill="#ffffff"/>
+<text x="32" y="38" font-family="Malgun Gothic,Arial,sans-serif" font-size="25" font-weight="700" fill="#172c32">01  경고 이벤트에서 실제 출력까지</text>
+<text x="32" y="68" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="400" fill="#126b59">팀 시스템 속 본인 담당: STM32 통신·커맨드 처리·HUB75 제어</text>
+<rect x="32" y="115" width="180" height="105" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="47" y="144" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">CCTV</text>
+<text x="47" y="171" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">영상 / 메타데이터</text>
+<rect x="282" y="115" width="225" height="105" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="297" y="144" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">서버</text>
+<text x="297" y="171" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">이벤트·이동 방향 분석</text>
+<text x="297" y="193" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">위험 판단 · 명령 생성</text>
+<rect x="588" y="115" width="225" height="105" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="603" y="144" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">STM32 · 본인 담당</text>
+<text x="603" y="171" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">수신 FSM · CRC16</text>
+<text x="603" y="193" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">명령 처리 · RTC 동기화</text>
+<rect x="862" y="115" width="110" height="105" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="877" y="144" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">HUB75</text>
+<text x="877" y="171" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">64 × 32</text>
+<text x="877" y="193" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">경고 출력</text>
+<polyline points="212,165 282,165" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="282,165 273.0,161.0 273.0,169.0" fill="#126b59"/>
+<text x="216" y="150" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">데이터</text>
+<polyline points="507,145 588,145" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="588,145 579.0,141.0 579.0,149.0" fill="#126b59"/>
+<text x="520" y="131" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">UART</text>
+<polyline points="588,198 507,198" fill="none" stroke="#477b9e" stroke-width="2.5" />
+<polygon points="507,198 516.0,202.0 516.0,194.0" fill="#477b9e"/>
+<text x="514" y="184" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#477b9e">ACK/NACK</text>
+<polyline points="813,165 862,165" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="862,165 853.0,161.0 853.0,169.0" fill="#126b59"/>
+<text x="819" y="150" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">GPIO</text>
+<rect x="282" y="278" width="225" height="80" rx="10" fill="#ffffff" stroke="#cddbd5" stroke-width="1.5"/>
+<text x="297" y="307" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">Qt 관제 클라이언트</text>
+<text x="297" y="334" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">영상·이벤트 확인</text>
+<polyline points="394,220 394,278" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="394,278 398.0,269.0 390.0,269.0" fill="#126b59"/>
+<text x="409" y="254" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">RTSP / TCP</text>
+<text x="588" y="266" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#126b59">녹색 영역 = 본인 담당</text>
+<text x="588" y="295" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">팀 전체 인식·서버 기능과</text>
+<text x="588" y="318" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">보드 제어 구현 범위를 구분</text>
+<text x="32" y="415" font-family="Malgun Gothic,Arial,sans-serif" font-size="25" font-weight="700" fill="#172c32">02  후속 확장: 타이머·DMA 기반 출력</text>
+<text x="32" y="447" font-family="Malgun Gothic,Arial,sans-serif" font-size="16" font-weight="400" fill="#566d72">CPU는 제어 워드를 준비하고, DMA는 GPIO 레지스터에 전송</text>
+<rect x="32" y="473" width="936" height="305" rx="12" fill="#f7f9f6" stroke="#cddbd5" stroke-width="1.5"/>
+<rect x="53" y="500" width="190" height="88" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="68" y="529" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">CPU</text>
+<text x="68" y="556" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">제어 워드 생성</text>
+<text x="68" y="578" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">유휴 버퍼 갱신</text>
+<rect x="304" y="500" width="210" height="88" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="319" y="529" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">RAM · 2개 버퍼</text>
+<text x="319" y="556" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">M0 / M1</text>
+<text x="319" y="578" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">32-bit BSRR 워드</text>
+<rect x="584" y="500" width="170" height="88" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="599" y="529" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">DMA2</text>
+<text x="599" y="556" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">메모리 → I/O</text>
+<rect x="813" y="500" width="137" height="88" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="828" y="529" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">GPIOB</text>
+<text x="828" y="556" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">BSRR</text>
+<polyline points="243,541 304,541" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="304,541 295.0,537.0 295.0,545.0" fill="#126b59"/>
+<polyline points="514,541 584,541" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="584,541 575.0,537.0 575.0,545.0" fill="#126b59"/>
+<polyline points="754,541 813,541" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="813,541 804.0,537.0 804.0,545.0" fill="#126b59"/>
+<rect x="321" y="650" width="176" height="74" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="336" y="679" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">TIM1</text>
+<text x="336" y="706" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">Update event</text>
+<polyline points="497,686 667,686 667,588" fill="none" stroke="#a95232" stroke-width="2.5" stroke-dasharray="7 5"/>
+<polygon points="667,588 663.0,597.0 671.0,597.0" fill="#a95232"/>
+<text x="514" y="674" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#a95232">DMA 요청</text>
+<rect x="813" y="650" width="137" height="74" rx="10" fill="#edf4ee" stroke="#126b59" stroke-width="1.5"/>
+<text x="828" y="679" font-family="Malgun Gothic,Arial,sans-serif" font-size="19" font-weight="700" fill="#172c32">HUB75</text>
+<text x="828" y="706" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#566d72">LED 출력</text>
+<polyline points="881,588 881,650" fill="none" stroke="#126b59" stroke-width="2.5" />
+<polygon points="881,650 885.0,641.0 877.0,641.0" fill="#126b59"/>
+<text x="896" y="623" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#126b59">신호</text>
+<polyline points="148,588 148,686 321,686" fill="none" stroke="#a95232" stroke-width="2.5" stroke-dasharray="7 5"/>
+<polygon points="321,686 312.0,682.0 312.0,690.0" fill="#a95232"/>
+<text x="165" y="674" font-family="Malgun Gothic,Arial,sans-serif" font-size="14" font-weight="400" fill="#a95232">초기 설정</text>
+<text x="52" y="757" font-family="Malgun Gothic,Arial,sans-serif" font-size="15" font-weight="400" fill="#477b9e">전송 완료 콜백 → 버퍼 상태 확인 → 다음 렌더링 준비</text>
+<text x="32" y="818" font-family="Malgun Gothic,Arial,sans-serif" font-size="17" font-weight="700" fill="#126b59">설계 포인트: 명령 처리 / 출력 타이밍 / 데이터 전송을 분리</text>
+</svg>
