@@ -7,7 +7,7 @@ const portfolio = {
     {title:['우수상','Excellence Award'],issuer:['(주)선도소프트','Sundo Soft'],date:'2024.12.23',topic:['천안시 불법주정차 데이터 분석','Analysis of illegal parking data in Cheonan'],description:['공공데이터를 활용한 불법주정차 분석 아이디어의 활용성과 문제 해결 능력을 인정받아 수상','Recognized for the utility of a public-data analysis proposal and its problem-solving approach']},
     {title:['장려상','Encouragement Award'],issuer:['강원대학교','Kangwon National University'],date:'2024.11.19',topic:['차선 및 물체인식 AI모빌리티','AI mobility with lane and object recognition'],description:['학부 졸업작품의 전공 지식 적용과 작품 완성도를 인정받아 수상','Recognized for applying engineering knowledge and completing a capstone prototype']}
   ],
-  pendingCertificate:['정보처리기사 · 결과 발표 대기','Engineer Information Processing · result pending'],
+  informationProcessingCertificate:['정보처리기사 · 2026.09','Engineer Information Processing · Passed Sep 11, 2026'],
   projects: [
     {
       id:'display', no:'01', category:['firmware','systems'], year:'2025',

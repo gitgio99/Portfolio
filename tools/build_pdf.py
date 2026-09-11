@@ -154,7 +154,7 @@ for title,date,items in [
  for s in items:y=bullet(s,y)
  y+=14
 line(y);y+=21;text('자격 · 어학',43,y,12,'KRB',GREEN);y+=29
-for s in [DATA['pendingCertificate'][0],'ISTQB CTFL · 2026.06 취득','TOEIC Speaking IH · 2025.09 / TOEIC 820 · 2025.01']:y=bullet(s,y)
+for s in [DATA['informationProcessingCertificate'][0],'ISTQB CTFL · 2026.06 취득','TOEIC Speaking IH · 2025.09 / TOEIC 820 · 2025.01']:y=bullet(s,y)
 y+=16
 rect(43,y,W-86,69,INK);text('LET’S CONNECT',58,y+11,8,'KRB',HexColor('#b3cdbd'));text(DATA['email'],58,y+32,12,'KR',BG);text('github.com/gitgio99',344,y+36,9,'KR',BG)
 c.linkURL('mailto:'+DATA['email'],(58,H-y-55,300,H-y-30),relative=0);c.linkURL(DATA['github'],(340,H-y-55,545,H-y-30),relative=0)

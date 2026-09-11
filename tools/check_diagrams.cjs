@@ -3,15 +3,15 @@ const path=require('path'),{pathToFileURL}=require('url');
 (async()=>{
  const root=path.resolve(__dirname,'..'),b=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'}),p=await b.newPage({viewport:{width:1100,height:900}});
  const assert=(x,m)=>{if(!x)throw Error(m)};
- for(const id of ['display','linux','integration']){
+ for(const id of ['display','linux','integration','pipeline']){
   for(const lang of ['ko','en']){
    await p.goto(pathToFileURL(path.join(root,`assets/diagrams/${id}-${lang}.svg`)).href);
    await p.locator('svg').screenshot({path:path.join(root,`tmp/architecture/${id}-${lang}.png`)});
   }
  }
  await p.goto(pathToFileURL(path.join(root,'index.html')).href);
- assert(await p.locator('.system-diagram').count()===3,'Three diagrams');assert(await p.locator('.award-card').count()===4,'Four awards');
- assert((await p.locator('#profile').innerText()).includes('정보처리기사 · 결과 발표 대기'),'Pending certification');
+ assert(await p.locator('.system-diagram').count()===4,'Four diagrams');assert(await p.locator('.award-card').count()===4,'Four awards');
+ assert((await p.locator('#profile').innerText()).includes('정보처리기사 · 2026.09.11 합격'),'Confirmed certification');
  await p.locator('#integration .diagram-open').click();assert(await p.locator('#diagram-modal').evaluate(e=>e.open),'Open diagram');
  await p.keyboard.press('Escape');assert(!(await p.locator('#diagram-modal').evaluate(e=>e.open)),'Close with Escape');
  await p.locator('#language').click();
@@ -21,5 +21,5 @@ const path=require('path'),{pathToFileURL}=require('url');
  await p.setViewportSize({width:390,height:900});await p.locator('#display .diagram-open').click();await p.screenshot({path:path.join(root,'tmp/architecture/mobile-modal.png')});await p.keyboard.press('Escape');
  await p.locator('#display .diagram-open').click();await p.locator('#diagram-zoom').click();assert(await p.locator('.diagram-viewport').evaluate(e=>e.scrollWidth>e.clientWidth),'Original-size zoom scrolls on mobile');await p.keyboard.press('Escape');
  assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Mobile overflow');
- console.log('PASS: 3 bilingual diagrams, 4 awards, pending certificate, image load, modal/escape and mobile width.');await b.close();
+ console.log('PASS: 4 bilingual diagrams, 4 awards, confirmed certificate, image load, modal/escape and mobile width.');await b.close();
 })().catch(e=>{console.error(e);process.exit(1)});
