@@ -1,3 +1,10 @@
+# [PDF 편집] 프로젝트·수상·정보처리기사의 원본은 portfolio-data.js입니다.
+# 원본 수정 후 node tools/build_site.cjs로 JSON을 갱신한 뒤 이 파일을 실행하세요.
+# 표지(Cover), 경력(PROFILE_PAGE), 기타 자격증, 구성도 설명(notes)은 아래에서 직접 수정합니다.
+# 좌표 단위는 pt. text/para의 x는 왼쪽부터, y는 위에서부터 거리입니다.
+# size는 글자 크기, leading은 줄간격. PDF는 웹 CSS를 사용하지 않습니다.
+# 출력은 output/pdf/Jioh_Jeon_Portfolio_KO.pdf. 생성 후 페이지 잘림을 반드시 확인하세요.
+# 수상은 현재 1페이지 고정: 항목/설명을 늘릴 때 페이지 배치도 조정해야 합니다.
 """Build a deliberately paginated, Korean portfolio from shared website content."""
 import json
 from pathlib import Path
@@ -51,7 +58,7 @@ def end(y=None):
  c.showPage()
 sixty=60
 
-# Cover
+# Cover — [표지 편집] 이름·소개·핵심 문구. 웹 hero와 별도이므로 함께 확인.
 base(1,'PORTFOLIO / SEPTEMBER 2026')
 text('ENTRY-LEVEL APPLICATION',43,91,9,'KRB',GREEN)
 text('하드웨어의 동작을 이해하고,',43,133,26,'KRB')
@@ -135,6 +142,7 @@ for i,p in enumerate(DATA['projects']):
   if y>H-60:raise RuntimeError('Architecture overflow')
   c.showPage()
 
+# [경력·교육·기타 자격증 편집] 웹 tools/build_site.cjs의 profile에도 같은 변경을 반영.
 base(PROFILE_PAGE,'PROFILE / CONTACT')
 text('경험의 기반',43,76,25,'KRB')
 text('경력 · 교육',43,135,12,'KRB',GREEN)
@@ -160,6 +168,7 @@ rect(43,y,W-86,69,INK);text('LET’S CONNECT',58,y+11,8,'KRB',HexColor('#b3cdbd'
 c.linkURL('mailto:'+DATA['email'],(58,H-y-55,300,H-y-30),relative=0);c.linkURL(DATA['github'],(340,H-y-55,545,H-y-30),relative=0)
 if y+69>H-60:raise RuntimeError('Profile overflow')
 c.showPage()
+# [수상 배치 편집] 내용은 공통 DATA. y+=122는 항목 간격, size 인자는 글자 크기.
 base(AWARDS_PAGE,'AWARDS')
 text('수상 기록',43,77,25,'KRB')
 text('기술 구현 · 협업 · 학습 성과',43,122,11,'KR',MUTED)

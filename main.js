@@ -1,3 +1,9 @@
+/* [동작 편집] 내용·디자인 수정은 이 파일을 바꿀 필요가 없습니다.
+ * language(): 한영 전환 및 그림 교체 / theme(): 다크 모드 / storage: 선택 상태 저장.
+ * data-filter: 프로젝트 분류 / #expand: 상세 모두 펼치기 / beforeprint: 인쇄 전 펼치기.
+ * .diagram-open: 구성도 확대 / #diagram-zoom: 원본 크기 전환.
+ * 버튼 id/class를 바꾸면 tools/build_site.cjs의 HTML도 함께 수정하세요.
+ */
 (()=>{
  const $=s=>document.querySelector(s),all=s=>[...document.querySelectorAll(s)];let lang='ko',expanded=false;
  const storage={get(k){try{return localStorage.getItem(k)}catch{return null}},set(k,v){try{localStorage.setItem(k,v)}catch{}}};

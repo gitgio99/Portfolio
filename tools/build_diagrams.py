@@ -1,3 +1,11 @@
+# [구성도 편집] 아래 Scene('프로젝트 ID', 높이, en) 블록을 찾아 수정하세요.
+# integration: 실시간 연동 / display: STM32 / linux: TCP / pipeline: GPU 동기화.
+# 문구는 ('한국어', 'English') 순서. x는 오른쪽, y는 아래쪽으로 증가하며 그림 폭은 1000입니다.
+# s.box(x,y,폭,높이,제목,설명,owned): owned=True는 본인 구현 강조.
+# s.t(x,y,한국어,영어,size=크기): 글자 / s.arrow([(x,y),...]): 연결선.
+# 저장 후 python tools/build_diagrams.py → SVG 8개와 diagram-scenes.json 갱신.
+# SVG/JSON을 직접 수정하면 다음 생성 때 덮어써집니다. PDF 반영은 build_pdf.py도 실행.
+# 실무 그림에는 고객/장비 명칭, 내부 신호 ID, 보정 계수를 추가하지 마세요.
 """Code-native architecture diagrams; shared geometry for SVG and vector PDF."""
 import json, math
 from pathlib import Path

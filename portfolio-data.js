@@ -1,14 +1,36 @@
-/* Shared content for the website and the Korean PDF. ko / en pairs. */
+/* [편집 시작] 프로젝트·수상·정보처리기사·연락처의 공통 원본
+ * 문구는 ['한국어', 'English'] 순서입니다. 따옴표·쉼표·대괄호는 유지하세요.
+ * 문자열 안에 작은따옴표가 필요하면 \' 로 작성합니다.
+ * 저장 후 node tools/build_site.cjs → 웹과 PDF용 JSON 갱신.
+ * PDF는 별도로 python tools/build_pdf.py 실행. 자세한 순서는 편집가이드.md 참고.
+ * 소개/경력/기타 자격증은 tools/build_site.cjs와 tools/build_pdf.py에서 각각 수정합니다.
+ * name은 현재 화면의 모든 이름에 연결되어 있지 않습니다. 이름 변경 시 두 생성 파일도 검색하세요.
+ */
 const portfolio = {
   name: ['전지오', 'Jioh Jeon'], email: 'wldh0026@gmail.com', github: 'https://github.com/gitgio99',
+  // [수상 편집] 아래 객체 1개가 수상 1건입니다. 배열 순서가 표시 순서입니다.
+  // title: 상 이름 / issuer: 기관 / date: 날짜 / topic: 주제 / description: 수상 사유.
+  // 추가 시 기존 객체를 복사하고 객체 사이에 쉼표를 넣으세요. PDF 한 페이지 분량도 확인하세요.
   awards: [
     {title:['최우수상 · 최종 최우수팀(1위)','Grand Prize · First-place team'],issuer:['한화비전','Hanwha Vision'],date:'2025.08.07',topic:['이면도로 사각지대 사고방지 시스템','Blind-spot accident prevention system'],description:['임베디드/비전 AI 교육과정 최종 프로젝트에서 기술력과 협업 능력을 인정받아 최우수팀 선정','Selected as the top team in the embedded/vision AI final project for technical achievement and collaboration']},
     {title:['우수 훈련생상','Outstanding Trainee Award'],issuer:['한화비전','Hanwha Vision'],date:'2025.08.07',topic:['임베디드/비전 AI 교육과정','Embedded / Vision AI program'],description:['교육과정 전반의 학업 성적 및 실습 평가 우수자로 선정되어 표창 수여','Recognized for outstanding academic performance and practical assessments throughout the program']},
     {title:['우수상','Excellence Award'],issuer:['(주)선도소프트','Sundo Soft'],date:'2024.12.23',topic:['천안시 불법주정차 데이터 분석','Analysis of illegal parking data in Cheonan'],description:['공공데이터를 활용한 불법주정차 분석 아이디어의 활용성과 문제 해결 능력을 인정받아 수상','Recognized for the utility of a public-data analysis proposal and its problem-solving approach']},
     {title:['장려상','Encouragement Award'],issuer:['강원대학교','Kangwon National University'],date:'2024.11.19',topic:['차선 및 물체인식 AI모빌리티','AI mobility with lane and object recognition'],description:['학부 졸업작품의 전공 지식 적용과 작품 완성도를 인정받아 수상','Recognized for applying engineering knowledge and completing a capstone prototype']}
   ],
-  informationProcessingCertificate:['정보처리기사 · 2026.09','Engineer Information Processing · Passed Sep 11, 2026'],
+  // [정보처리기사 편집] 한국어와 영어를 함께 수정하면 웹·PDF에 반영됩니다.
+  informationProcessingCertificate:['정보처리기사 · 2026.09','Engineer Information Processing · Sep, 2026'],
+  // [프로젝트 편집] 아래 객체 1개가 프로젝트 1개입니다. 배열 순서가 웹/PDF 순서입니다.
+  // id: 고유 영문 ID(링크·그림 연결에 사용하므로 기존 값 유지 권장), no: 표시 번호, year: 연도.
+  // category: firmware / linux / systems / data 중 선택(여러 개 가능, 필터 분류).
+  // title/subtitle: 제목/보조 제목, period/role: 기간/역할, summary: 핵심 요약.
+  // tags: 기술 태그, metric: ['강조 값','한국어 설명','영어 설명'] (검증된 값만).
+  // flow: 간단한 흐름도 상자 문구, flowNote: 설명. 별도 구성도가 있는 4개는 그림이 우선입니다.
+  // sections: [[제목 한·영], [[항목 한·영], ...]] 구조. 항목의 ': ' 앞 문구는 웹에서 굵게 표시됩니다.
+  // repo: 소스 URL(없으면 생략), relevance: 연관 역량, branched: 간단 흐름도 분기 표시 여부.
+  // 새 프로젝트: 기존 객체 복사 → 고유 id/번호/내용 수정 → build_site의 08 및 8 projects도 수정.
+  // 구성도까지 추가하려면 build_site의 ID 목록 2곳, build_diagrams, build_pdf의 DIAGRAM_IDS/notes도 수정.
   projects: [
+    // [프로젝트 바로 찾기] display — 아래 title부터 설명을 수정하세요.
     {
       id:'display', no:'01', category:['firmware','systems'], year:'2025',
       title:['STM32 디스플레이 제어와 DMA 확장','STM32 display control & DMA extension'],
@@ -39,6 +61,7 @@ const portfolio = {
       repo:'https://github.com/gitgio99/stm-32',
       relevance:['주변장치 제어 · 데이터 이동 · 펌웨어 구조','Peripheral control · data movement · firmware structure']
     },
+    // [프로젝트 바로 찾기] linux — 아래 title부터 설명을 수정하세요.
     {
       id:'linux', no:'02', category:['linux','firmware'], year:'2025',
       title:['Linux TCP 원격 장치 제어','Linux TCP remote device control'],
@@ -65,6 +88,7 @@ const portfolio = {
           ['개발 범위: wiringPi 기반 사용자 공간 장치 제어와 공유 라이브러리 연동','Scope: wiringPi-based user-space device control with shared-library integration']]]
       ],repo:'https://github.com/gitgio99/TCP_module_control',relevance:['Linux 시스템 프로그래밍 · 장치 추상화 · 네트워크','Linux systems programming · device abstraction · networking']
     },
+    // [프로젝트 바로 찾기] integration — 아래 title부터 설명을 수정하세요.
     {
       id:'integration',no:'03',category:['systems','firmware'],year:'2026',
       title:['실시간 차량 모델·시험장비 연동','Real-time model & test-equipment integration'],
@@ -90,6 +114,7 @@ const portfolio = {
           ['관찰 사항: 실장비 응답 지연에 따른 초기 속도 차이를 결과에 명시','Observation: documented initial speed differences associated with equipment response delay']]]
       ],relevance:['요구사항 해석 · 인터페이스 정합성 · 체계 통합','Requirements interpretation · interface consistency · system integration']
     },
+    // [프로젝트 바로 찾기] pipeline — 아래 title부터 설명을 수정하세요.
     {
       id:'pipeline',no:'04',category:['linux','data','systems'],year:'2026',
       title:['GPU 이미지·라벨 생성 파이프라인','GPU image & label generation pipeline'],
@@ -115,6 +140,7 @@ const portfolio = {
           ['평가 구성: 기상 조건별 이미지·라벨을 활용한 모델 학습과 결과 비교','Evaluation: model training and comparison using weather-conditioned images and labels']]]
       ],relevance:['Linux / C++ · 데이터 파이프라인 · 동기화','Linux / C++ · data pipelines · synchronization']
     },
+    // [프로젝트 바로 찾기] migration — 아래 title부터 설명을 수정하세요.
     {
       id:'migration',no:'05',category:['linux','systems'],year:'2026',
       title:['실시간 타깃 빌드 환경 업그레이드','Real-time target build-environment upgrade'],
@@ -140,6 +166,7 @@ const portfolio = {
           ['업무 산출물: 버전별 의존성·설정 변경 사항을 기록하여 현장 점검에 활용','Output: recorded version-specific dependencies and configuration changes for field diagnosis']]]
       ],relevance:['빌드 의존성 · 타깃 이해 · 시스템 디버깅','Build dependencies · target awareness · system debugging']
     },
+    // [프로젝트 바로 찾기] sensor — 아래 title부터 설명을 수정하세요.
     {
       id:'sensor',no:'06',category:['data','systems'],year:'2024',
       title:['LiDAR·카메라 데이터 정합과 변형','LiDAR / camera alignment & data transformation'],
@@ -165,6 +192,7 @@ const portfolio = {
           ['결과 점검: 객체 단위 변형으로 이상 상황을 구성하고 융합 입력을 시각적으로 확인','Result inspection: constructed object-level anomalous scenarios and visually checked fusion inputs']]]
       ],relevance:['센서 인터페이스 · 좌표 정합 · 데이터 처리','Sensor interfaces · coordinate alignment · data processing']
     },
+    // [프로젝트 바로 찾기] qt — 아래 title부터 설명을 수정하세요.
     {
       id:'qt',no:'07',category:['linux','systems'],year:'2025',
       title:['CCTV 유지보수 예약 관리','CCTV maintenance scheduling'],
@@ -189,6 +217,7 @@ const portfolio = {
           ['기능 연동: 담당 등록·조회 화면을 팀 공통 데이터 구조와 연결','Integration: connected owned registration and viewing features with shared team data']]]
       ],relevance:['C++ 모듈 설계 · 요구사항 구현 · 팀 협업','C++ modular design · requirements implementation · collaboration']
     },
+    // [프로젝트 바로 찾기] mobility — 아래 title부터 설명을 수정하세요.
     {
       id:'mobility',no:'08',category:['systems','data'],year:'2024',
       title:['카메라 기반 AI 모빌리티','Camera-based AI mobility'],
